@@ -1,0 +1,112 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <lbd-chart
+                  [title]="'Etudiant ar ville'"
+                  [subtitle]="''"
+                  [chartClass]="'ct-perfect-fourth'"
+                  [chartType]="emailChartType"
+                  [chartData]="emailChartData"
+                  [legendItems]="emailChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-users'"
+                  [footerText]="''">
+                </lbd-chart>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Difficulté dans les etablissements</h4>
+                        <!-- <p class="category">Backend development</p> -->
+                    </div>
+                    <div class="content" style="min-height: 350px;">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <select name="" id="" class="form-control">
+                                    <option value="">Etablissement 1</option>
+                                    <option value="">Etablissement 2</option>
+                                    <option value="">Etablissement 3</option>
+                                    <option value="">Etablissement 4</option>
+                                    <option value="">Etablissement 5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <lbd-chart
+                  [title]="'Evolution des étudiants par année'"
+                  [subtitle]="''"
+                  [chartType]="hoursChartType"
+                  [chartData]="hoursChartData"
+                  [chartOptions]="hoursChartOptions"
+                  [chartResponsive]="hoursChartResponsive"
+                  [legendItems]="hoursChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-history'"
+                  [footerText]="''">
+                </lbd-chart>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <lbd-chart
+                  [title]="'Etudiant et notes d\'etablissement'"
+                  [subtitle]="''"
+                  [chartType]="activityChartType"
+                  [chartData]="activityChartData"
+                  [chartOptions]="activityChartOptions"
+                  [chartResponsive]="activityChartResponsive"
+                  [legendItems]="activityChartLegendItems"
+                  [withHr]="true"
+                  [footerIconClass]="'fa fa-check'"
+                  [footerText]="''">
+                </lbd-chart>
+            </div>    
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Legende des etablissements</h4>
+                        <!-- <p class="category">Backend development</p> -->
+                    </div>
+                    <div class="content" style="min-height: 400px;">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <select name="" id="2" class="form-control">
+                                    <option value="">Etablissement 1</option>
+                                    <option value="">Etablissement 2</option>
+                                    <option value="">Etablissement 3</option>
+                                    <option value="">Etablissement 4</option>
+                                    <option value="">Etablissement 5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Classement des etablssemens</h4>
+                        <!-- <p class="category">Backend development</p> -->
+                    </div>
+                    <div class="content" style="min-height: 400px;">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <select name="" id="3" class="form-control">
+                                    <option value="">Etablissement 1</option>
+                                    <option value="">Etablissement 2</option>
+                                    <option value="">Etablissement 3</option>
+                                    <option value="">Etablissement 4</option>
+                                    <option value="">Etablissement 5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
