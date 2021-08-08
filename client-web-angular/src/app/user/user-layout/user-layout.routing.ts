@@ -7,7 +7,7 @@ import { RequestsComponent } from '../components/requests/requests.component';
 export const UserLayoutRoutes: Routes = [
     { 
         path: 'profil',      
-        component: ProfileUpdateComponent 
+        component: ProfileUpdateComponent
     },
     {
         path: 'requete',

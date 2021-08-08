@@ -3,33 +3,34 @@
         <div class="row">
             <div class="col-md-4">
                 <lbd-chart
-                  [title]="'Etudiant ar ville'"
-                  [subtitle]="''"
-                  [chartClass]="'ct-perfect-fourth'"
-                  [chartType]="emailChartType"
-                  [chartData]="emailChartData"
-                  [legendItems]="emailChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-users'"
-                  [footerText]="''">
+                        [title]="'Etudiant ar ville'"
+                        [subtitle]="''"
+                        [chartClass]="'ct-perfect-fourth'"
+                        [chartType]="emailChartType"
+                        [chartData]="emailChartData"
+                        [legendItems]="emailChartLegendItems"
+                        [withHr]="true"
+                        [footerIconClass]="'fa fa-users'"
+                        [footerText]="''">
                 </lbd-chart>
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <div class="header">
+                    <div class="panel-heading">
                         <h4 class="title">Difficulté dans les etablissements</h4>
                         <!-- <p class="category">Backend development</p> -->
                     </div>
-                    <div class="content" style="min-height: 350px;">
+                    <div class="panel-body" style="min-height: 350px;">
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <select name="" id="" class="form-control">
-                                    <option value="">Etablissement 1</option>
-                                    <option value="">Etablissement 2</option>
-                                    <option value="">Etablissement 3</option>
-                                    <option value="">Etablissement 4</option>
-                                    <option value="">Etablissement 5</option>
+                                    <option value="" *ngFor="let i of [1,2,3,4,5]">Ville {{ i }}</option>
                                 </select>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="list-group">
+                                    <div class="list-group-item" *ngFor="let i of [1,2,3,4]">Difficulté {{ i }}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -37,73 +38,72 @@
             </div>
             <div class="col-md-5">
                 <lbd-chart
-                  [title]="'Evolution des étudiants par année'"
-                  [subtitle]="''"
-                  [chartType]="hoursChartType"
-                  [chartData]="hoursChartData"
-                  [chartOptions]="hoursChartOptions"
-                  [chartResponsive]="hoursChartResponsive"
-                  [legendItems]="hoursChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-history'"
-                  [footerText]="''">
+                        [title]="'Evolution des étudiants par année'"
+                        [subtitle]="''"
+                        [chartType]="hoursChartType"
+                        [chartData]="hoursChartData"
+                        [chartOptions]="hoursChartOptions"
+                        [chartResponsive]="hoursChartResponsive"
+                        [legendItems]="hoursChartLegendItems"
+                        [withHr]="true"
+                        [footerIconClass]="'fa fa-history'"
+                        [footerText]="''">
                 </lbd-chart>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <lbd-chart
-                  [title]="'Etudiant et notes d\'etablissement'"
-                  [subtitle]="''"
-                  [chartType]="activityChartType"
-                  [chartData]="activityChartData"
-                  [chartOptions]="activityChartOptions"
-                  [chartResponsive]="activityChartResponsive"
-                  [legendItems]="activityChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-check'"
-                  [footerText]="''">
+                        [title]="'Etudiant et notes d\'etablissement'"
+                        [subtitle]="''"
+                        [chartType]="activityChartType"
+                        [chartData]="activityChartData"
+                        [chartOptions]="activityChartOptions"
+                        [chartResponsive]="activityChartResponsive"
+                        [legendItems]="activityChartLegendItems"
+                        [withHr]="true"
+                        [footerIconClass]="'fa fa-check'"
+                        [footerText]="''">
                 </lbd-chart>
-            </div>    
+            </div>
             <div class="col-md-3">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Legende des etablissements</h4>
-                        <!-- <p class="category">Backend development</p> -->
+                        <h4 class="title">Couleurs des etablissements</h4>
                     </div>
-                    <div class="content" style="min-height: 400px;">
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <select name="" id="2" class="form-control">
-                                    <option value="">Etablissement 1</option>
-                                    <option value="">Etablissement 2</option>
-                                    <option value="">Etablissement 3</option>
-                                    <option value="">Etablissement 4</option>
-                                    <option value="">Etablissement 5</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="content  table-full-width" style="min-height: 400px;">
+                        <table class="table ">
+                            <tbody>
+                            <tr *ngFor="let i of [1,2,3,4,5,6]">
+                                <td>Etablissement</td>
+                                <td>
+                                    <i class="fa fa-circle"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Classement des etablssemens</h4>
+                        <h4 class="title">Classement des etablssement</h4>
                         <!-- <p class="category">Backend development</p> -->
                     </div>
-                    <div class="content" style="min-height: 400px;">
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <select name="" id="3" class="form-control">
-                                    <option value="">Etablissement 1</option>
-                                    <option value="">Etablissement 2</option>
-                                    <option value="">Etablissement 3</option>
-                                    <option value="">Etablissement 4</option>
-                                    <option value="">Etablissement 5</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="content table-full-width" style="min-height: 400px;">
+                        <table class="table table-striped">
+                            <tbody>
+                            <tr *ngFor="let i of [5,4,3,2,2,2]">
+                                <td>Etablissement</td>
+                                <td>
+                                    <i class="fa fa-star" style="color: yellow"></i>
+                                    <i class="fa fa-star" style="color: yellow"></i>
+                                    <i class="fa fa-star" style="color: yellow"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

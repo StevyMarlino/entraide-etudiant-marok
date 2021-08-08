@@ -30,9 +30,7 @@ const routes: Routes = [
     children: [
         {
         path: '',
-        loadChildren: () =>
-            import('./guest/guest-layout/guest-layout.module')
-            .then(m => m.GuestLayoutModule)
+        loadChildren: './guest/guest-layout/guest-layout.module#GuestLayoutModule'
         }
     ]
   },
@@ -42,9 +40,7 @@ const routes: Routes = [
     children: [
         {
         path: '',
-        loadChildren: () =>
-              import('./user/user-layout/user-layout.module')
-              .then(m => m.UserLayoutModule)
+        loadChildren: './user/user-layout/user-layout.module#UserLayoutModule'
         }
     ]
   },

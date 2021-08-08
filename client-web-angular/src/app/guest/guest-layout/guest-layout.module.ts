@@ -11,6 +11,7 @@ import { LoginAndSignupComponent } from '../components/login-and-signup/login-an
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import {NewsComponent} from '../components/news/news.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { FooterComponent } from '../components/footer/footer.component';
     LoginAndSignupComponent,
     NavbarComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+      NewsComponent
   ]
 })
 export class GuestLayoutModule { }

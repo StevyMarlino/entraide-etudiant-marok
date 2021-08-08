@@ -10,15 +10,17 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { UserManagementComponent } from '../components/user-management/user-management.component';
 import { AdministrationLayoutComponent } from './administration-layout.component';
 import { LbdModule } from 'app/shared/lbd/lbd.module';
+import {DataTablesModule} from 'angular-datatables';
 
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(AdministrationLayoutRoutes),
-    LbdModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(AdministrationLayoutRoutes),
+        LbdModule,
+        DataTablesModule
+    ],
   declarations: [
     DashboardComponent,
     AdministrationLayoutComponent,
