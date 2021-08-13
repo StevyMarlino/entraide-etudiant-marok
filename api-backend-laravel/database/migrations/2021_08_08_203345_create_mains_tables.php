@@ -15,12 +15,14 @@ class CreateMainsTables extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
+            $table->string('color')->default("#444");
             $table->timestamps();
         });
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
+            $table->string('color')->default("#d04245");
             $table->timestamps();
         });
         Schema::create('requests', function (Blueprint $table) {
@@ -33,21 +35,20 @@ class CreateMainsTables extends Migration
             $table->id();
             $table->string('path');
             $table->foreignId('request_id');
-            $table->foreignId('user_id');
             $table->timestamps();
         });
         Schema::create('city_notes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('message');
-            $table->foreignId('school_id');
+            $table->string('value');
+            $table->text('message')->nullable();
+            $table->foreignId('city_id');
             $table->foreignId('user_id');
             $table->timestamps();
         });
         Schema::create('school_notes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('message');
+            $table->string('value');
+            $table->text('message')->nullable();
             $table->foreignId('school_id');
             $table->foreignId('user_id');
             $table->timestamps();

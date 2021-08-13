@@ -5,9 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
-import { NavbarModule } from './shared/navbar/navbar.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { SidebarModule } from './shared/sidebar/sidebar.module';
+import { NavbarModule } from '../modules/app-common/navbar/navbar.module';
+import { FooterModule } from '../modules/app-common/footer/footer.module';
+import { SidebarModule } from '../modules/app-common/sidebar/sidebar.module';
 
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './components/loader/loader.component';

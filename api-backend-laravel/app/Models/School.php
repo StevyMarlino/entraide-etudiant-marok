@@ -13,4 +13,13 @@ class School extends Model
         'name'
     ];
 
+    public function notes()
+    {
+        return $this->hasMany(SchoolNote::class);
+    }
+
+    public function students() {
+        return $this->hasMany(User::class);
+    }
+
 }

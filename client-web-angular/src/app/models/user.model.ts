@@ -10,4 +10,11 @@ export class UserModel {
     born_at?: string;
     gender?: string;
     phone?: string;
+    avatar?: string;
+    avatar_file?: string;
+    access_token ?: string;
+    role ?: string;
+    school_id ?: string;
+    city_id ?: string;
+    school_registration_date ?: string;
 }

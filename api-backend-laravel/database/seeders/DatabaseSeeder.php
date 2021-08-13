@@ -5,7 +5,10 @@ namespace Database\Seeders;
 use App\Models\City;
 use App\Models\School;
 use App\Models\User;
+use App\Models\UserRequest;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,44 +22,99 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             "email" => "admin@admin.com"
         ]);
-        User::factory(10)->create();
-        // Cities 
+        $defaultUser = User::factory()->create();
+        // Cities
         $cities = [
             [
-                'name' => 'Ville 1'
+                'name' => 'Casablanca',
+                'color' => "#5cb85c"
             ],
             [
-                'name' => 'Ville 2'
+                'name' => 'Fez',
+                'color' => "#5bc0de"
             ],
             [
-                'name' => 'Ville 3'
+                'name' => 'Tangier',
+                'color' => "#f0ad4e"
             ],
-            [
-                'name' => 'Ville 4'
-            ],
-
         ];
+
         // Schools
         $schools = [
             [
-                'name' => 'Ecole 1',
+                'name' => 'UEMF',
+                'color'=> "#d9534f"
             ],
             [
-                'name' => 'Ecole 2',
+                'name' => 'LAS',
+                'color' => "#f7973e"
             ],
             [
-                'name' => 'Ecole 3',
-            ],
-            [
-                'name' => 'Ecole 4',
-            ],
+                'name' => 'AEROSUP - Casablanca',
+                'color' => "#cc1a7c"
+            ]
         ];
 
-        foreach($cities as $city) {
-            City::query()->create($city);
+        for ($i = 1; $i < 6; $i++) {
+            $r = new UserRequest;
+            $r->fill([
+                'content' => 'requetes utilisateur '.$i,
+                'user_id' => $defaultUser->id
+            ]);
+            $r->save();
+            for ($j=1; $j < 6; $j++){
+                $r->files()->create([
+                    'path' => url('note.png')
+                ]);
+            }
         }
-        foreach($schools as $school) {
-           School::query()->create($school); 
+
+        foreach ($cities as $city_data) {
+            $city = new City;
+            $city->fill($city_data);
+            $city->save();
+            for ($i = 1; $i < 5; $i++) {
+                $city->notes()->create([
+                    'value' => $i,
+                    'message' => "",
+                    'user_id' => $defaultUser->id
+                ]);
+            }
         }
+        foreach ($schools as $school_data) {
+            $school = new School();
+            $school->fill($school_data);
+            $school->save();
+            for ($i = 1; $i < 5; $i++) {
+                $school->notes()->create([
+                    'value' => $i,
+                    'message' => "",
+                    'user_id' => $defaultUser->id
+                ]);
+            }
+        }
+
+        foreach (City::all() as $city){
+            $defaultUser = User::factory(
+                Arr::random([10,40,80,120,160])
+            )->create([
+                'city_id' => $city->id
+            ]);
+        }
+
+        foreach (School::all() as $school){
+            $defaultUser = User::factory(35  )->create([
+                'school_id' => $school->id,
+                'school_registration_date' => Arr::random([
+                    Carbon::createFromDate("2016","2","10"),
+                    Carbon::createFromDate("2017","4","10"),
+                    Carbon::createFromDate("2018","6","10"),
+                    Carbon::createFromDate("2019","8","10"),
+                    Carbon::createFromDate("2020","9","10"),
+                    Carbon::createFromDate("2014","11","10"),
+                ])
+            ]);
+        }
+
     }
 }

@@ -1,0 +1,114 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <lbd-chart
+                        [title]="'Etudiant ar ville'"
+                        [subtitle]="''"
+                        [chartClass]="'ct-perfect-fourth'"
+                        [chartType]="citiesChartType"
+                        [chartData]="citiesChartData"
+                        [legendItems]="citiesChartLegendItems"
+                        [withHr]="true"
+                        [footerIconClass]="'fa fa-users'"
+                        [footerText]="''">
+                </lbd-chart>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="panel-heading">
+                        <h4 class="title">Difficulté dans les etablissements</h4>
+                    </div>
+                    <div class="panel-body" style="min-height: 350px;">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <select name="" id="" class="form-control">
+                                    <option value="" *ngFor="let city of dashboardData.cities">
+                                        {{ city.name }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="list-group">
+                                    <div class="list-group-item" *ngFor="let req of dashboardData.requests">
+                                         {{ req.message }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <lbd-chart
+                        [title]="'Evolution des étudiants par année'"
+                        [subtitle]="''"
+                        [chartType]="yearsChartType"
+                        [chartData]="yearsChartData"
+                        [chartOptions]="yearsChartOptions"
+                        [chartResponsive]="yearsChartResponsive"
+                        [legendItems]="yearsChartLegendItems"
+                        [withHr]="true"
+                        [footerIconClass]="'fa fa-history'"
+                        [footerText]="''">
+                </lbd-chart>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <lbd-chart
+                        [title]="'Etudiant et notes d\'etablissement'"
+                        [subtitle]="''"
+                        [chartType]="notesChartType"
+                        [chartData]="notesChartData"
+                        [chartOptions]="notesChartOptions"
+                        [chartResponsive]="notesChartResponsive"
+                        [legendItems]="notesChartLegendItems"
+                        [withHr]="true"
+                        [footerIconClass]="'fa fa-check'"
+                        [footerText]="''">
+                </lbd-chart>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Couleurs des etablissements</h4>
+                    </div>
+                    <div class="content  table-full-width" style="min-height: 400px;">
+                        <table class="table ">
+                            <tbody>
+                            <tr *ngFor="let school of dashboardData.schools">
+                                <td>{{ school.name }}</td>
+                                <td>
+                                    <i class="fa fa-circle" [ngStyle]="{'color': school.color}"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Classement des etablssement</h4>
+                    </div>
+                    <div class="content table-full-width" style="min-height: 400px;">
+                        <table class="table table-striped">
+                            <tbody>
+                            <tr *ngFor="let i of dashboardData.schools">
+                                <td>Etablissement</td>
+                                <td>
+                                    <i class="fa fa-star" style="color: yellow"></i>
+                                    <i class="fa fa-star" style="color: yellow"></i>
+                                    <i class="fa fa-star" style="color: yellow"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

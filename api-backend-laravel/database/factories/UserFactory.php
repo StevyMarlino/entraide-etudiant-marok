@@ -31,8 +31,9 @@ class UserFactory extends Factory
             'last_name' => $this->faker->name(),
             'family_name' => $this->faker->name(),
             'born_at' => $this->faker->date(),
-            'gender' => $this->faker->randomElement([1,2]),
+            'gender' => $this->faker->randomElement(['masculin','feminan']),
             'phone' => $this->faker->phoneNumber(),
+            'role' => $this->faker->randomElement(['admin','etudiant'])
         ];
     }
 

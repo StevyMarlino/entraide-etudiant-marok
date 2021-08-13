@@ -28,4 +28,5 @@ export class AuthService {
     getUser(): UserModel {
         return JSON.parse(localStorage.getItem('AUTH_DATA')).user
     }
-}
+
+} 

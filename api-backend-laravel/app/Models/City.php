@@ -13,4 +13,8 @@ class City extends Model
         'name'
     ];
 
+    public function notes() {
+        return $this->hasMany(CityNote::class);
+    }
+
 }

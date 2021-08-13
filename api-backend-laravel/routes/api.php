@@ -28,4 +28,4 @@ Route::middleware('auth.token')->group(static function () {
     Route::get('/schools',[MainAPIController::class,'schools']);
 });
 
-Route::get('/dashboard-data', [MainAPIController::class,'dashboardData']);
+Route::get('/dashboard', [MainAPIController::class,'dashboardData']);

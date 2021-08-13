@@ -1,4 +1,4 @@
 export class UserRequestModel {
     id?: string;
-    name: string;
+    message: string;
 }

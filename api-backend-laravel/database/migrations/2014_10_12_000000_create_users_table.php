@@ -23,8 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('family_name');
             $table->date('born_at');
-            $table->tinyInteger('gender');
+            $table->enum('gender',['masculin','feminan']);
+            $table->enum('role',['admin','etudiant']);
             $table->string('phone');
+            $table->foreignId('school_id')->nullable();
+            $table->foreignId('city_id')->nullable();
+            $table->dateTime('school_registration_date')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -173,7 +173,12 @@ class MainAPIController extends Controller
 
     public function dashboardData(Request $request)
     {
-
+        return [
+             'users' => User::all(),
+             'cities' => City::with('notes')->get(),
+             'requests' => UserRequest::with('files')->get(),
+             'schools' => School::with('notes')->get(),
+        ];
     }
 
 }

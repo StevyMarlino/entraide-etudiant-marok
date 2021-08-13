@@ -3,9 +3,9 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UserLayoutComponent } from './user-module/user-layout/user-layout.component';
-import {GuestLayoutComponent} from './guest-module/guest-layout/guest-layout.component';
-import {AdminLayoutComponent} from './admin-module/admin-layout/admin-layout.component';
+import { UserLayoutComponent } from '../modules/user/user-layout/user-layout.component';
+import {GuestLayoutComponent} from '../modules/guest/guest-layout/guest-layout.component';
+import {AdminLayoutComponent} from '../modules/admin/admin-layout/admin-layout.component';
 
 const routes: Routes = [
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
     children: [
         {
         path: '',
-        loadChildren: './guest-module/guest.module#GuestModule'
+        loadChildren: '../modules/guest/guest.module#GuestModule'
         }
     ]
   },
@@ -29,7 +29,7 @@ const routes: Routes = [
     children: [
         {
         path: '',
-        loadChildren: './user-module/user.module#UserModule'
+        loadChildren: '../modules/user/user.module#UserModule'
         }
     ]
   },
@@ -39,7 +39,7 @@ const routes: Routes = [
     children: [
         {
         path: '',
-        loadChildren: './admin-module/admin.module#AdminModule'
+        loadChildren: '../modules/admin/admin.module#AdminModule'
         }
     ]
   },
