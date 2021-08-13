@@ -1,54 +1,31 @@
 <?php
 
+use App\Http\Controllers\MainAPIController;
+use App\Models\City;
+use App\Models\UserRequest as ModelsRequest;
+use App\Models\RequestFile;
+use App\Models\School;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
-use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\Response;
 
 
-Route::post('/users/login',static function (Request $request){
-    $request->validate([
-        "email" => "required",
-        "password" => "required"
-    ]);
-    $user = User::query()->where('email',$request->email)->first();
-    if (!empty($user) && Hash::check($request->password,$user->password) ) {
-        $user->access_token = md5(Str::random(130)) ;
-        $user->save();
-        return  $user;
-    }
-    return response()->json([
-        'email' => 'Information de connexions invalid',
-    ],401);
+
+Route::post('/login', [MainAPIController::class,'login']);
+
+Route::post('/register', [MainAPIController::class,'registration']);
+
+Route::middleware('auth.token')->group(static function () {
+    Route::post('user',[MainAPIController::class,'user']);
+    Route::post('city', [MainAPIController::class,'city']);
+    Route::post('school', [MainAPIController::class,'school']);
+    Route::post('request', [MainAPIController::class,'request']);
+    Route::get('/users', [MainAPIController::class,'users']);
+    Route::get('/cities', [MainAPIController::class,'cities']);
+    Route::get('/schools',[MainAPIController::class,'schools']);
 });
 
-Route::post('/users/registration',static function (Request $request){
-
-});
-
-Route::post('/users/profile-update/user',static function (Request $request){
-
-});
-
-Route::post('/users/profile-update/city',static function (Request $request){
-
-});
-
-Route::post('/users/profile-update/school',static function (Request $request){
-
-});
-
-Route::post('/users/profile-update/request',static function (Request $request){
-
-});
-
-Route::get('/users',static function (Request $request){
-
-});
-
-Route::get('/dashboard-data',static function (Request $request){
-
-});
+Route::get('/dashboard-data', [MainAPIController::class,'dashboardData']);

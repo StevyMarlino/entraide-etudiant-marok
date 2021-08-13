@@ -1,0 +1,55 @@
+<form (ngSubmit)="handleSubmit()">
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Prenom </label>
+            <input type="text" class="form-control" [(ngModel)]="user.last_name"  name="last_name" >
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Nom de famille</label>
+            <input type="text" class="form-control" [(ngModel)]="user.family_name" name="family_name" >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Date de naissance</label>
+            <input type="date" class="form-control" [(ngModel)]="user.born_at" name="born_at" >
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Genre</label>
+            <select class="form-control" [(ngModel)]="user.gender" name="gender"  >
+                <option value="1">Masculin</option>
+                <option value="2">Feminin</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label>Nom utilisateur</label>
+            <input type="text" class="form-control" [(ngModel)]="user.name" name="name" >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="user.email" name="email" >
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Numero de telephone</label>
+            <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone" >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label>Mot de passe</label>
+            <input type="password" class="form-control" [(ngModel)]="user.password" name="password" >
+        </div>
+        <div class="col-md-6 form-group">
+            <label>Confirmation de mot de passe</label>
+            <input type="password" class="form-control" [(ngModel)]="user.password_confirmation" name="password_confirmation">
+        </div>
+    </div>
+    <button class="btn btn-primary btn-fill" style="width: 100%">
+        Soumettre
+    </button>
+    <div class="clearfix"></div>
+</form>

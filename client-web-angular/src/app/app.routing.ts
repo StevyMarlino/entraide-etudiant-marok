@@ -3,10 +3,9 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
-import { GuestLayoutComponent } from './guest/guest-layout/guest-layout.component';
-import { UserLayoutComponent } from './user/user-layout/user-layout.component';
-import { AdministrationLayoutComponent } from './administration/administration-layout/administration-layout.component';
+import { UserLayoutComponent } from './user-module/user-layout/user-layout.component';
+import {GuestLayoutComponent} from './guest-module/guest-layout/guest-layout.component';
+import {AdminLayoutComponent} from './admin-module/admin-layout/admin-layout.component';
 
 const routes: Routes = [
   {
@@ -16,21 +15,11 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AdminLayoutComponent,
-    children: [
-        {
-        path: '',
-        loadChildren: './admin/admin-layout/admin-layout.module#AdminLayoutModule'
-        }
-    ]
-  },
-  {
-    path: '',
     component: GuestLayoutComponent,
     children: [
         {
         path: '',
-        loadChildren: './guest/guest-layout/guest-layout.module#GuestLayoutModule'
+        loadChildren: './guest-module/guest.module#GuestModule'
         }
     ]
   },
@@ -40,23 +29,23 @@ const routes: Routes = [
     children: [
         {
         path: '',
-        loadChildren: './user/user-layout/user-layout.module#UserLayoutModule'
+        loadChildren: './user-module/user.module#UserModule'
         }
     ]
   },
   {
     path: 'admin',
-    component: AdministrationLayoutComponent,
+    component: AdminLayoutComponent,
     children: [
         {
         path: '',
-        loadChildren: './administration/administration-layout/administration-layout.module#AdministrationLayoutModule'
+        loadChildren: './admin-module/admin.module#AdminModule'
         }
     ]
   },
   {
     path: '**',
-    redirectTo: 'non-authentifie/connexion'
+    redirectTo: 'actualite'
   }
 ];
 

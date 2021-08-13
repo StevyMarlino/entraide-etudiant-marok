@@ -1,47 +1,64 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {UserModel} from 'app/models/user.model';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  }),
+}
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class WebRequestService {
-  readonly ROOT_URL;
+    readonly ROOT_URL;
 
-  constructor(private http: HttpClient) {
-    this.ROOT_URL = 'http://localhost:3000';
-  }
+    constructor(private http: HttpClient) {
+        this.ROOT_URL = 'http://localhost:8000/api';
+    }
 
-  get(uri: string) {
-    return this.http.get(`${this.ROOT_URL}/${uri}`);
-  }
+    login(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/users/login`, {
+            email: user.email,
+            password: user.password
+        }, httpOptions);
+    }
 
-  post(uri: string, payload: Object) {
-    return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
-  }
+    register(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
 
-  patch(uri: string, payload: Object) {
-    return this.http.patch(`${this.ROOT_URL}/${uri}`, payload);
-  }
+    cities(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
 
-  delete(uri: string) {
-    return this.http.delete(`${this.ROOT_URL}/${uri}`);
-  }
+    city(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
 
-  login(email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/users/login`, {
-      email,
-      password
-    }, {
-      observe: 'response'
-    });
-  }
+    dashboardData(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
 
-  signup(email: string, password: string) {
-    return this.http.post(`${this.ROOT_URL}/users`, {
-      email,
-      password
-    }, {
-      observe: 'response'
-    });
-  }
+    userRequest(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
+
+    school(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
+
+    schools(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
+
+    user(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
+
+    users(user: UserModel) {
+        return this.http.post(`${this.ROOT_URL}/register`, user, httpOptions);
+    }
 }

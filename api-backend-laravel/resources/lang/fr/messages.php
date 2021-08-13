@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'error-username-password' => 'Compte ou mot de passe Incorrect',
+    'close' => 'Fermer',
+    'auth-required' => 'Vous devez vous conecter pour acceder a cette page',
+    'register-success' => 'Votre compte vient d\'être crée ! connectez vous à votre compte email et cliquez sur le lien que vous avez recu pour l\'activer',
+    'profile-update-success' => 'Profil mis à jour',
+    'delete-confirm-title' => 'Confirmation de suppression',
+    'delete-confirm-desc' => 'Voulez vous vraiment supprimer cet enregistrement ?',
+    'delete-confirm-yes' => 'Oui, supprimer',
+    'delete-confirm-cancel' => 'Non',
+    'delete-box' => 'Terminé !',
+    'delete-box-success' => 'La supression s\'est effectué avec success',
+    'delete-box-error' => 'Une erreur s\'est produite lors de la suppression',
+    'operation-box' => 'Terminé !',
+    'operation-box-success' => 'L\'opération s\'est effectué avec success',
+    'operation-box-error' => 'Une erreur s\'est produite lors de l\'opération',
+    'resend-code' => 'Validez votre compte',
+    'resended-code' => 'cliquez sur le lien dans le mail pour activer vôtre compte',
+    'new-job' => 'Nouveau Job disponible <a href=":link">:job</a>',
+    'insufficient-credit' => 'Votre crédit est insuffisant. Souscrivez a une offre',
+    'reset' => 'Nous avons envoyé un lien à l\'adresse email. Cliquez dessus pour changer votre mot de passe',
+    'reset-password' => 'Reinitialisation du mot de passe',
+    'msg-reset-header' => 'Cher :name',
+    'password-reseted' => 'votre mot de passe a été mis à jour. connectez vous a présent',
+    'msg-reset-content' => 'Vous avez demandé a reinitaliser votre mot de passe. cliquez sur le lien ci-dessous pour le faire',
+];

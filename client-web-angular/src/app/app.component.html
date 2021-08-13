@@ -1,2 +1,2 @@
-
-<router-outlet></router-outlet>
+<app-loader *ngIf="Loader.isLoading"></app-loader>
+<router-outlet *ngIf="!Loader.isLoading"></router-outlet>

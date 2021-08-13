@@ -26,7 +26,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/sass/light-bootstrap-dashboard.scss",
               "src/assets/css/demo.css",
-              "node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css"
+              "node_modules/datatables.net-bs/css/dataTables.bootstrap.min.css",
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",

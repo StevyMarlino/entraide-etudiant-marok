@@ -20,6 +20,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'last_name',
+        'family_name',
+        'born_at',
+        'gender',
+        'phone',
     ];
 
     /**
@@ -40,4 +45,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function schoolNote() {
+        return $this->hasOne(CityNote::class);
+    }
+
+    public function cityNote() {
+        return $this->hasOne(SchoolNote::class);
+    }
 }

@@ -1,0 +1,29 @@
+<div class="main-content" >
+
+    <div class="container-fluid text-capitalize">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h3 class="title">Actualité de la CASAM</h3>
+                        <p  class="category">L'actualité sur le Cameroun</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let i of [1,2,3,4,5]"  class="col-md-4">
+                <div class="card">
+                    <div class="header">
+                        <a href="">
+                            <h5 class="title text-primary">Le monument de douala</h5>
+                        </a>
+                    </div>
+                    <div class="content">
+                        <img src="assets/img/news/{{i}}.jpg" alt="" class="img-fluid" style="height: 230px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

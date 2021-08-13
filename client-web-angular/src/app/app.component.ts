@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import {LoaderService} from './services/loader/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,16 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 
 export class AppComponent implements OnInit {
 
-     constructor(public location: Location) {}
+     constructor(
+         public location: Location,
+         private Loader: LoaderService
+     ) {}
 
-    ngOnInit(){
+    ngOnInit() {
     }
 
-    isMap(path: any){
-      var title: any = this.location
+    isMap(path: any) {
+      const title: any = this.location
                            .prepareExternalUrl(this.location.path())
                            .slice( 1 );
       return path !== title;

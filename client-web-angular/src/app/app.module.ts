@@ -10,7 +10,8 @@ import { FooterModule } from './shared/footer/footer.module';
 import { SidebarModule } from './shared/sidebar/sidebar.module';
 
 import { AppComponent } from './app.component';
-import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { HttpErrorsComponent } from './components/http-errors/http-errors.component';
 
 
 @NgModule({
@@ -26,9 +27,8 @@ import { AdminLayoutComponent } from './admin/admin-layout/admin-layout.componen
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent
+    LoaderComponent
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 
