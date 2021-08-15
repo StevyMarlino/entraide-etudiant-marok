@@ -38,35 +38,30 @@ export class GuestDashboardComponent implements OnInit {
     public notesChartLegendItems: LegendItem[];
 
 
+    loaded = false;
+
     constructor(
         private webRequestService: WebRequestService
     ) {
     }
 
-    ngOnInit() {
-        this.webRequestService.getDashboardData().subscribe(data => {
-            this.dashboardData = data;
-        });
+    handleCitiesChart() {
+        // Cities
         this.citiesChartType = ChartType.Pie;
-        this.citiesChartData = {
-            labels: ['62%', '32%', '6%'],
-            series: [62, 32, 6]
-        };
-        this.citiesChartLegendItems = [
-            {title: 'Etablissement 1', imageClass: 'fa fa-circle text-info'},
-            {title: 'Etablissement 2', imageClass: 'fa fa-circle text-danger'},
-            {title: 'Etablissement 3', imageClass: 'fa fa-circle text-warning'}
-        ];
+        this.citiesChartData = this.dashboardData.cities_chart;
+        // this.citiesChartLegendItems = [
+        //     {title: 'Etablissement 1', imageClass: 'fa fa-circle text-danger'},
+        //     {title: 'Etablissement 2', imageClass: 'fa fa-circle text-danger'},
+        //     {title: 'Etablissement 3', imageClass: 'fa fa-circle text-danger'}
+        // ];
+    }
 
+    handleYearsChart() {
         this.yearsChartType = ChartType.Line;
-        this.yearsChartData = {
-            labels: ['01/21', '02/21', '03/21', '04/21', '05/21', '06/21', '07/21', '08/21'],
-            series: [
-                [287, 385, 490, 492, 554, 586, 698, 695, 752, 788, 846, 944],
-                [67, 152, 143, 240, 287, 335, 435, 437, 539, 542, 544, 647],
-                [23, 113, 67, 108, 190, 239, 307, 308, 439, 410, 410, 509]
-            ]
-        };
+        this.yearsChartData = this.dashboardData.years_chart;
+        console.log(
+            this.yearsChartData
+        )
         this.yearsChartOptions = {
             low: 0,
             high: 800,
@@ -90,12 +85,10 @@ export class GuestDashboardComponent implements OnInit {
                 }
             }]
         ];
-        this.yearsChartLegendItems = [
-            {title: 'Etablissement 1', imageClass: 'fa fa-circle text-info'},
-            {title: 'Etablissement 2', imageClass: 'fa fa-circle text-danger'},
-            {title: 'Etablissement 3', imageClass: 'fa fa-circle text-warning'}
-        ];
+        this.yearsChartLegendItems = [];
+    }
 
+    handleNotesChart() {
         this.notesChartType = ChartType.Bar;
         this.notesChartData = {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -125,7 +118,15 @@ export class GuestDashboardComponent implements OnInit {
             {title: 'Etablissement', imageClass: 'fa fa-circle text-info'},
             {title: 'Notes', imageClass: 'fa fa-circle text-danger'}
         ];
+    }
 
-
+    async ngOnInit() {
+        this.dashboardData = await this.webRequestService
+            .getDashboardData()
+            .toPromise();
+        this.loaded = true;
+        this.handleCitiesChart();
+        this.handleYearsChart();
+        this.handleNotesChart();
     }
 }

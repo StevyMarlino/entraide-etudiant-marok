@@ -12,7 +12,7 @@ import {NewsPageComponent} from './pages/news-page/news-page.component';
 import {AuthenticationPageComponent} from './pages/authentication-page/authentication-page.component';
 import {RegistrationFormComponent} from './components/registration-form/registration-form.component';
 import {LoginFormComponent} from './components/login-form/login-form.component';
-import {GuestDashboardComponent} from './pages/dashboard/guest-dashboard.component';
+import {GuestDashboardComponent} from './pages/dashboard-page/guest-dashboard.component';
 import {LbdModule} from '../app-common/lbd/lbd.module';
 import {HttpErrorsComponent} from '../../app/components/http-errors/http-errors.component';
 

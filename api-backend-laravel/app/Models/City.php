@@ -13,8 +13,18 @@ class City extends Model
         'name'
     ];
 
-    public function notes() {
+    protected $guarded = [
+      'students_percent'
+    ];
+
+    public function notes()
+    {
         return $this->hasMany(CityNote::class);
+    }
+
+    public function students()
+    {
+        return $this->hasMany(User::class);
     }
 
 }

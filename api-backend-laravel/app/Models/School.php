@@ -18,7 +18,8 @@ class School extends Model
         return $this->hasMany(SchoolNote::class);
     }
 
-    public function students() {
+    public function students()
+    {
         return $this->hasMany(User::class);
     }
 

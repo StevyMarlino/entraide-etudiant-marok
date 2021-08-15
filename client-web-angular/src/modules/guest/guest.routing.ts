@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import {AuthenticationPageComponent} from './pages/authentication-page/authentication-page.component';
 import {NewsPageComponent} from './pages/news-page/news-page.component';
-import {GuestDashboardComponent} from './pages/dashboard/guest-dashboard.component';
+import {GuestDashboardComponent} from './pages/dashboard-page/guest-dashboard.component';
 
 
 export const GuestRoutes: Routes = [

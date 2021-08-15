@@ -1,0 +1,85 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row" *ngIf="loaded">
+            <div  class="col-md-8" style="max-height: 500px" >
+                <lbd-chart
+                        [title]="'Etudiant ar ville'"
+                        [subtitle]="''"
+                        [chartClass]="'ct-perfect-fourth'"
+                        [chartType]="citiesChartType"
+                        [chartData]="citiesChartData"
+                        [legendItems]="citiesChartLegendItems"
+                        [withHr]="true"
+                        [footerIconClass]="'fa fa-users'"
+                        [footerText]="''">
+                </lbd-chart>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="header"><h4 class="title">Villes</h4></div>
+                    <table class="table table-striped content">
+                        <tbody>
+                        <tr *ngFor="let city of dashboardData.cities">
+                            <td>{{ city.name }}</td>
+                            <td>{{ city.students_percent }} %</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+<!--        <div class="row">-->
+<!--            <div class="col-md-12" *ngIf="loaded">-->
+<!--                <lbd-chart-->
+<!--                        [title]="'Evolution des étudiants par année'"-->
+<!--                        [subtitle]="''"-->
+<!--                        [chartType]="yearsChartType"-->
+<!--                        [chartData]="yearsChartData"-->
+<!--                        [chartOptions]="yearsChartOptions"-->
+<!--                        [chartResponsive]="yearsChartResponsive"-->
+<!--                        [legendItems]="yearsChartLegendItems"-->
+<!--                        [withHr]="true"-->
+<!--                        [footerIconClass]="'fa fa-history'"-->
+<!--                        [footerText]="''">-->
+<!--                </lbd-chart>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12" *ngIf="loaded">-->
+<!--                <lbd-chart-->
+<!--                        [title]="'Etudiants et notes d\'etablissement'"-->
+<!--                        [subtitle]="''"-->
+<!--                        [chartType]="notesChartType"-->
+<!--                        [chartData]="notesChartData"-->
+<!--                        [chartOptions]="notesChartOptions"-->
+<!--                        [chartResponsive]="notesChartResponsive"-->
+<!--                        [legendItems]="notesChartLegendItems"-->
+<!--                        [withHr]="true"-->
+<!--                        [footerIconClass]="'fa fa-check'"-->
+<!--                        [footerText]="''">-->
+<!--                </lbd-chart>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="card">-->
+<!--                    <div class="header">-->
+<!--                        <h4 class="title">Classement des etablssement</h4>-->
+<!--                    </div>-->
+<!--                    <div class="content table-full-width" style="min-height: 400px;">-->
+<!--                        <table class="table table-striped">-->
+<!--                            <tbody>-->
+<!--                            <tr *ngFor="let i of dashboardData.schools">-->
+<!--                                <td>Etablissement</td>-->
+<!--                                <td>-->
+<!--                                    <i class="fa fa-star" style="color: #ebce34"></i>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>

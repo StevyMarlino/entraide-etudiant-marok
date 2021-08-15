@@ -5,13 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
-import { NavbarModule } from '../modules/app-common/navbar/navbar.module';
-import { FooterModule } from '../modules/app-common/footer/footer.module';
-import { SidebarModule } from '../modules/app-common/sidebar/sidebar.module';
 
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './components/loader/loader.component';
-import { HttpErrorsComponent } from './components/http-errors/http-errors.component';
 
 
 @NgModule({
@@ -20,9 +16,6 @@ import { HttpErrorsComponent } from './components/http-errors/http-errors.compon
     FormsModule,
     RouterModule,
     HttpClientModule,
-    NavbarModule,
-    FooterModule,
-    SidebarModule,
     AppRoutingModule
   ],
   declarations: [
