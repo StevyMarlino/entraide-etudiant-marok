@@ -1,18 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0a5c4f5-ecfe-4fbc-8bb7-d49df52b3be9" name="Default Changelist" comment="" />
+    <list default="true" id="e0a5c4f5-ecfe-4fbc-8bb7-d49df52b3be9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/app/components/api-error-alert/api-error-alert.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/dashboard.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/session.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/guards/admin.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/guards/admin.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guards/guest.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guards/guest.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-city-form/profile-parameters-page-city-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-city-form/profile-parameters-page-city-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-request-form/profile-parameters-page-request-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-request-form/profile-parameters-page-request-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-school-form/profile-parameters-page-school-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-school-form/profile-parameters-page-school-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/guards/user.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/guards/user.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/http-errors/http-errors.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/components/api-error-alert/api-error-alert.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/http-errors/http-errors.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/components/api-error-alert/api-error-alert.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/http-errors/http-errors.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/http-errors/http-errors.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/interfaces/error-response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/api-error-response.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/models/dashboard-data.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/models/user-city.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/city.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/models/user-request.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/models/user-school.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/school.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/models/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/models/userSessionModel.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/http-errors/http-errors.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/http-errors/http-errors.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api-error-alert/api-error-alert.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/web-request/web-request.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api-requests/api-request.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/web-request/web-request.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api-requests/api-requests.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin-layout/admin-layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin-layout/admin-layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin-layout/admin-layout.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin-layout/admin-layout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin-layout/admin-layout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin.routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/requests-management/requests-management.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/requests-management/requests-management.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/user-management/user-management.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/user-management/user-management.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/user-management/user-management.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/user-management/user-management.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/lbd/lbd-chart/lbd-chart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/lbd/lbd-chart/lbd-chart.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/lbd/lbd-chart/lbd-chart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/lbd/lbd-chart/lbd-chart.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/lbd/lbd.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/lbd/lbd.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/footer/guest-footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/footer/guest-footer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/login-form/login-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/login-form/login-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/login-form/login-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/login-form/login-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/registration-form/registration-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/registration-form/registration-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guest-layout/guest-layout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guest-layout/guest-layout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guest.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guest.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guest.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guest.routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/pages/dashboard-page/guest-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/pages/dashboard-page/guest-dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-city-form/profile-parameters-page-city-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-city-form/profile-parameters-page-city-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-city-form/profile-parameters-page-city-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-city-form/profile-parameters-page-city-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-city-form/profile-parameters-page-city-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-city-form/profile-parameters-page-city-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-info-card/profile-parameters-page-info-card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-info-card/profile-parameters-page-info-card.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-info-card/profile-parameters-page-info-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-info-card/profile-parameters-page-info-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-info-card/profile-parameters-page-info-card.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-info-card/profile-parameters-page-info-card.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-info-card/profile-parameters-page-info-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-info-card/profile-parameters-page-info-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-request-form/profile-parameters-page-request-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-request-form/profile-parameters-page-request-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-request-form/profile-parameters-page-request-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-request-form/profile-parameters-page-request-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-request-form/profile-parameters-page-request-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-request-form/profile-parameters-page-request-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-school-form/profile-parameters-page-school-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-school-form/profile-parameters-page-school-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-school-form/profile-parameters-page-school-form.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-school-form/profile-parameters-page-school-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-school-form/profile-parameters-page-school-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-school-form/profile-parameters-page-school-form.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-user-form/profile-parameters-page-user-form.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-user-form/profile-parameters-page-user-form.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-user-form/profile-parameters-page-user-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-user-form/profile-parameters-page-user-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-user-form/profile-parameters-page-user-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-user-form/profile-parameters-page-user-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters-page-user-form/profile-parameters-page-user-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-parameters/profile-parameters-page-user-form/profile-parameters-page-user-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/pages/profile-parameters-page/profile-parameters-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/pages/profile-parameters-page/profile-parameters-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/user-layout/user-layout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/user-layout/user-layout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/user.module.ts" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/api-backend-laravel/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -132,11 +213,26 @@
   </component>
   <component name="ProjectId" id="1wPOUoVifJSjn46EWGvmC6IX67Y" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client-web-angular" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="de.espend.idea.laravel.ui.TemplateSettingsForm" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="ts.external.directory.path" value="D:\MON-LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MON-LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\modules\user\components\profile-parameters" />
+      <recent name="D:\MON-LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\modules\user\guards" />
+      <recent name="D:\MON-LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\modules\guest\guards" />
+      <recent name="D:\MON-LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\modules\admin\guards" />
+      <recent name="D:\MON-LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\app\models" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -161,10 +257,26 @@
       <option name="presentableId" value="Default" />
       <updated>1628356779450</updated>
       <workItem from="1628356795684" duration="1043000" />
+      <workItem from="1629036462460" duration="1936000" />
+      <workItem from="1629040428334" duration="8944000" />
+      <workItem from="1629108347212" duration="190000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

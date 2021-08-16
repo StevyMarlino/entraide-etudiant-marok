@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserCityModel } from 'app/models/user-city.model';
-import { UserSchoolModel } from 'app/models/user-school.model';
-import { UserModel } from 'app/models/user.model';
+import { City } from 'app/models/city';
+import { School } from 'app/models/school';
+import { User } from 'app/models/user';
 import { AuthService } from 'app/services/auth/auth.service';
-import { WebRequestService } from 'app/services/web-request/web-request.service';
+import { ApiRequestsService } from 'app/services/api-requests/api-requests.service';
 
 @Component({
   selector: 'app-profile-parametters-page',
@@ -12,13 +12,13 @@ import { WebRequestService } from 'app/services/web-request/web-request.service'
 })
 export class ProfileParametersPageComponent implements OnInit {
 
-  user: UserModel;
-  cities: UserCityModel[];
-  schools: UserSchoolModel[];
+  user: User;
+  cities: City[];
+  schools: School[];
 
   constructor(
     private auth: AuthService,
-    private httpService: WebRequestService
+    private httpService: ApiRequestsService
   ) { }
 
   ngOnInit(): void {

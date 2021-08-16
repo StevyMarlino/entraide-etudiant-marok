@@ -13,8 +13,8 @@ import {AuthenticationPageComponent} from './pages/authentication-page/authentic
 import {RegistrationFormComponent} from './components/registration-form/registration-form.component';
 import {LoginFormComponent} from './components/login-form/login-form.component';
 import {GuestDashboardComponent} from './pages/dashboard-page/guest-dashboard.component';
-import {LbdModule} from '../app-common/lbd/lbd.module';
-import {HttpErrorsComponent} from '../../app/components/http-errors/http-errors.component';
+import {LbdModule} from '../lbd/lbd.module';
+import {ApiErrorAlertComponent} from '../../app/components/api-error-alert/api-error-alert.component';
 
 @NgModule({
     imports: [
@@ -33,9 +33,8 @@ import {HttpErrorsComponent} from '../../app/components/http-errors/http-errors.
         RegistrationFormComponent,
         LoginFormComponent,
         GuestDashboardComponent,
-        HttpErrorsComponent
-    ],
+        ApiErrorAlertComponent
+    ]
 })
-
 
 export class GuestModule { }

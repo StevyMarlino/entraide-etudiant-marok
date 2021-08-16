@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+
 import {LoaderService} from '../../../../app/services/loader/loader.service';
-import {UserModel} from '../../../../app/models/user.model';
-import {WebRequestService} from '../../../../app/services/web-request/web-request.service';
+import {User} from '../../../../app/models/user';
+import {ApiRequestsService} from '../../../../app/services/api-requests/api-requests.service';
+import {AuthService} from 'app/services/auth/auth.service';
+import {ApiErrorAlertService} from 'app/services/api-error-alert/api-error-alert.service';
 
 @Component({
     selector: 'app-login-form',
@@ -11,24 +14,43 @@ import {WebRequestService} from '../../../../app/services/web-request/web-reques
 })
 export class LoginFormComponent implements OnInit {
 
-    user: UserModel = new UserModel();
+    user: User = new User();
 
     constructor(
         private router: Router,
         private loader: LoaderService,
-        private request: WebRequestService
+        private request: ApiRequestsService,
+        private auth: AuthService,
+        private httpErrorsService: ApiErrorAlertService
     ) {
     }
-
 
     ngOnInit(): void {
     }
 
     handleSubmit() {
         this.loader.showLoader();
-        this.request.login(this.user)
-            .subscribe((response) => {
-                this.loader.hideLoader()
+        this.request
+            .login(this.user)
+            .subscribe(successResponse => {
+                this.auth.setData(successResponse);
+                if (successResponse.user.role === 'admin') {
+                    this.router
+                        .navigate(['/utilisateur/profil'])
+                        .then(() => {
+                            this.loader.hideLoader()
+                        })
+                }
+                if (successResponse.user.role === 'etudiant') {
+                    this.router
+                        .navigate(['/administrateur/utilisateurs'])
+                        .then(() => {
+                            this.loader.hideLoader()
+                        })
+                }
+            }, errorResponse => {
+                this.loader.hideLoader();
+                this.httpErrorsService.toggleError(errorResponse.error);
             })
     }
 }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { AdminRoutes } from './admin.routing';
-import { LbdModule } from 'modules/app-common/lbd/lbd.module';
+import { LbdModule } from 'modules/lbd/lbd.module';
 import {DataTablesModule} from 'angular-datatables';
 import {AdminLayoutComponent} from './admin-layout/admin-layout.component';
 import {RequestsManagementComponent} from './pages/requests-management/requests-management.component';

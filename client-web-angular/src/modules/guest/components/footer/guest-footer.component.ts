@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GuestFooterComponent implements OnInit {
 
-  test : Date = new Date();
+  test: Date = new Date();
 
   constructor() { }
 

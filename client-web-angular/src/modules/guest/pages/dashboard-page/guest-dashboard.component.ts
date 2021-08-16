@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ChartType, LegendItem} from '../../../app-common/lbd/lbd-chart/lbd-chart.component';
+import {ChartType, LegendItem} from '../../../lbd/lbd-chart/lbd-chart.component';
 import * as Chartist from 'chartist';
-import {DashboardDataModel} from '../../../../app/models/dashboard-data.model';
-import {WebRequestService} from '../../../../app/services/web-request/web-request.service';
+import {DashboardModel} from '../../../../app/models/dashboard.model';
+import {ApiRequestsService} from '../../../../app/services/api-requests/api-requests.service';
 
 
 @Component({
@@ -10,11 +10,9 @@ import {WebRequestService} from '../../../../app/services/web-request/web-reques
     templateUrl: './guest-dashboard.component.html',
     styleUrls: ['./guest-dashboard.component.css']
 })
-
-
 export class GuestDashboardComponent implements OnInit {
 
-    public dashboardData: DashboardDataModel = new DashboardDataModel();
+    public dashboardData: DashboardModel = new DashboardModel();
 
     public formsData = {
         difficulty_city: undefined,
@@ -41,7 +39,7 @@ export class GuestDashboardComponent implements OnInit {
     loaded = false;
 
     constructor(
-        private webRequestService: WebRequestService
+        private webRequestService: ApiRequestsService
     ) {
     }
 

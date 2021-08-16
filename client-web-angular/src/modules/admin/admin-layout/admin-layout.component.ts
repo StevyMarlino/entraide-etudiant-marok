@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../app/services/auth/auth.service';
-import {WebRequestService} from '../../../app/services/web-request/web-request.service';
+import {ApiRequestsService} from '../../../app/services/api-requests/api-requests.service';
 
 @Component({
   selector: 'app-administration-layout',
@@ -12,21 +12,11 @@ export class AdminLayoutComponent implements OnInit {
 
   constructor(
       private authService: AuthService,
-      private webRequestService: WebRequestService,
+      private webRequestService: ApiRequestsService,
       private router: Router
   ) { }
 
   ngOnInit(): void {
-    const user = this.authService.getUser()
-    if ( user === undefined || user.id === undefined ) {
-      this.router.navigate(['/connexion'])
-      return;
-    }
-    if ( user !== undefined || user.id !== undefined ) {
-      if (user.role !== 'admin') {
-        this.router.navigate(['/utilisateur/profil'])
-      }
-    }
   }
 
 }

@@ -3,7 +3,6 @@ import {AuthenticationPageComponent} from './pages/authentication-page/authentic
 import {NewsPageComponent} from './pages/news-page/news-page.component';
 import {GuestDashboardComponent} from './pages/dashboard-page/guest-dashboard.component';
 
-
 export const GuestRoutes: Routes = [
     {
         path: 'connexion',
