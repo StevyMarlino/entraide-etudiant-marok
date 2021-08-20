@@ -20,7 +20,7 @@ class SpaAuthemtication
 //        $request->validate([
 //            'access_token' => 'required'
 //        ]);
-//        $request->user = User::query()->where('access_token',$request->access_token)->first();
+//        $request->user = UserModel::query()->where('access_token',$request->access_token)->first();
 //        if( empty($request->user) ) {
 //            abort(404);
 //        }

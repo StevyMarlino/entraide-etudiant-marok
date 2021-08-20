@@ -5,12 +5,12 @@ import { RouterModule } from '@angular/router';
 import { AdminRoutes } from './admin.routing';
 import { LbdModule } from 'modules/lbd/lbd.module';
 import {DataTablesModule} from 'angular-datatables';
-import {AdminLayoutComponent} from './admin-layout/admin-layout.component';
-import {RequestsManagementComponent} from './pages/requests-management/requests-management.component';
-import {UserManagementComponent} from './pages/user-management/user-management.component';
-import {AdminNavbarComponent} from './components/navbar/admin-navbar.component';
-import {AdminSidebarComponent} from './components/sidebar/admin-sidebar.component';
-import {AdminFooterComponent} from './components/footer/admin-footer.component';
+import {RequestsManagementComponent} from './pages/requests-page/requests-management.component';
+import {UserManagementComponent} from './pages/users-page/user-management.component';
+import {AdminLayoutComponent} from './admin-layout.component';
+import {AppNavbarComponent} from '../../app/components/navbar/app-navbar.component';
+import {AppFooterComponent} from '../../app/components/footer/app-footer.component';
+import {AppSidebarComponent} from '../../app/components/sidebar/app-sidebar.component';
 
 
 
@@ -25,9 +25,9 @@ import {AdminFooterComponent} from './components/footer/admin-footer.component';
     AdminLayoutComponent,
     RequestsManagementComponent,
     UserManagementComponent,
-    AdminNavbarComponent,
-    AdminSidebarComponent,
-    AdminFooterComponent
+    AppNavbarComponent,
+    AppSidebarComponent,
+    AppFooterComponent
   ],
 })
 export class AdminModule { }

@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-
-import {LoaderService} from '../../../../app/services/loader/loader.service';
-import {User} from '../../../../app/models/user';
-import {ApiRequestsService} from '../../../../app/services/api-requests/api-requests.service';
-import {AuthService} from 'app/services/auth/auth.service';
-import {ApiErrorAlertService} from 'app/services/api-error-alert/api-error-alert.service';
+import {UserModel} from '../../../../app/models/user.model';
+import {UserBrowserSessionService} from 'app/services/user-browser-session.service';
+import {ApiErrorHandlerService} from 'app/services/api-error-handler.service';
+import {ApiAuthenticationService} from '../../../../app/services/api/api-authentication.service';
 
 @Component({
     selector: 'app-login-form',
@@ -13,15 +11,13 @@ import {ApiErrorAlertService} from 'app/services/api-error-alert/api-error-alert
     styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-
-    user: User = new User();
+    user: UserModel = new UserModel();
 
     constructor(
         private router: Router,
-        private loader: LoaderService,
-        private request: ApiRequestsService,
-        private auth: AuthService,
-        private httpErrorsService: ApiErrorAlertService
+        private request: ApiAuthenticationService,
+        private userSession: UserBrowserSessionService,
+        private apiErrorAlert: ApiErrorHandlerService
     ) {
     }
 
@@ -29,28 +25,17 @@ export class LoginFormComponent implements OnInit {
     }
 
     handleSubmit() {
-        this.loader.showLoader();
-        this.request
-            .login(this.user)
-            .subscribe(successResponse => {
-                this.auth.setData(successResponse);
-                if (successResponse.user.role === 'admin') {
-                    this.router
-                        .navigate(['/utilisateur/profil'])
-                        .then(() => {
-                            this.loader.hideLoader()
-                        })
-                }
-                if (successResponse.user.role === 'etudiant') {
-                    this.router
-                        .navigate(['/administrateur/utilisateurs'])
-                        .then(() => {
-                            this.loader.hideLoader()
-                        })
-                }
-            }, errorResponse => {
-                this.loader.hideLoader();
-                this.httpErrorsService.toggleError(errorResponse.error);
-            })
+        this.request.login(this.user).subscribe(user => {
+            this.userSession.user = user;
+            if (user.role === 'admin') {
+                this.router.navigate(['/admin/utilisateurs'])
+            }
+            if (user.role === 'etudiant') {
+                this.router.navigate(['/utilisateur/profil'])
+            }
+        }, error => {
+            console.log(error)
+            this.apiErrorAlert.handleFromResponse(error)
+        })
     }
 }

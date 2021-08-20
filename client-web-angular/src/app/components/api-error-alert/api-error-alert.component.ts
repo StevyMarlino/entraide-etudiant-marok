@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiErrorResponse} from '../../models/api-error-response';
-import {ApiErrorAlertService} from '../../services/api-error-alert/api-error-alert.service';
+import {ApiErrorResponseModel} from '../../models/api-error-response.model';
+import {ApiErrorHandlerService} from '../../services/api-error-handler.service';
 
 @Component({
     selector: 'app-http-errors',
@@ -9,12 +9,12 @@ import {ApiErrorAlertService} from '../../services/api-error-alert/api-error-ale
 })
 export class ApiErrorAlertComponent implements OnInit {
 
-    errorResponse: ApiErrorResponse;
+    errorResponse: ApiErrorResponseModel;
 
     errors = [];
 
     constructor(
-        private httpErrorsService: ApiErrorAlertService
+        private httpErrorsService: ApiErrorHandlerService
     ) {
         this.errorResponse = this.httpErrorsService.errorResponse
     }
@@ -23,6 +23,7 @@ export class ApiErrorAlertComponent implements OnInit {
         this.httpErrorsService
             .onToggleError()
             .subscribe(errorResponse => {
+                this.errors = [];
                 for (const key in errorResponse.errors) {
                     errorResponse.errors[key].forEach(element => {
                         this.errors.push(element)

@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\City;
+use App\Models\CityNote;
 use App\Models\School;
+use App\Models\SchoolNote;
 use App\Models\User;
 use App\Models\UserRequest;
 use Carbon\Carbon;
@@ -20,9 +22,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory()->create([
-            "email" => "admin@admin.com"
+            "email" => "admin@admin.com",
+            'role' => 'admin'
         ]);
-        $defaultUser = User::factory()->create();
+        $defaultUser = User::factory([
+            'email' => 'user@user.com',
+            'role' => 'etudiant'
+        ])->create();
+
         // Cities
         $cities = [
             [
@@ -43,7 +50,7 @@ class DatabaseSeeder extends Seeder
         $schools = [
             [
                 'name' => 'UEMF',
-                'color'=> "#d9534f"
+                'color' => "#d9534f"
             ],
             [
                 'name' => 'LAS',
@@ -58,11 +65,11 @@ class DatabaseSeeder extends Seeder
         for ($i = 1; $i < 6; $i++) {
             $r = new UserRequest;
             $r->fill([
-                'content' => 'requetes utilisateur '.$i,
+                'content' => 'requetes utilisateur ' . $i,
                 'user_id' => $defaultUser->id
             ]);
             $r->save();
-            for ($j=1; $j < 6; $j++){
+            for ($j = 1; $j < 6; $j++) {
                 $r->files()->create([
                     'path' => url('note.png')
                 ]);
@@ -94,27 +101,44 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        foreach (City::all() as $city){
-            $defaultUser = User::factory(
-                Arr::random([10,40,80,120,160])
+        foreach (City::all() as $city) {
+            User::factory(
+                Arr::random([10, 40, 80, 120, 160])
             )->create([
                 'city_id' => $city->id
             ]);
         }
 
-        foreach (School::all() as $school){
-            $defaultUser = User::factory(35  )->create([
+        foreach (School::all() as $school) {
+            User::factory(35)->create([
                 'school_id' => $school->id,
                 'school_registration_date' => Arr::random([
-                    Carbon::createFromDate("2016","2","10"),
-                    Carbon::createFromDate("2017","4","10"),
-                    Carbon::createFromDate("2018","6","10"),
-                    Carbon::createFromDate("2019","8","10"),
-                    Carbon::createFromDate("2020","9","10"),
-                    Carbon::createFromDate("2014","11","10"),
+                    Carbon::createFromDate("2016", "2", "10"),
+                    Carbon::createFromDate("2017", "4", "10"),
+                    Carbon::createFromDate("2018", "6", "10"),
+                    Carbon::createFromDate("2019", "8", "10"),
+                    Carbon::createFromDate("2020", "9", "10"),
+                    Carbon::createFromDate("2014", "11", "10"),
                 ])
             ]);
         }
+
+        CityNote::query()->create([
+            'value' => 4,
+            'message' => "",
+            'city_id' => City::query()->first()->id,
+            'user_id' => $defaultUser->id
+        ]);
+        SchoolNote::query()->create([
+            'value' => 2,
+            'message' => "",
+            'school_id' => School::query()->first()->id,
+            'user_id' => $defaultUser->id
+        ]);
+
+        $defaultUser->query()->update([
+            'school_registration_date' => now()
+        ]);
 
     }
 }

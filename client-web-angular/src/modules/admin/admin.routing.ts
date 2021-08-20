@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import {RequestsManagementComponent} from './pages/requests-management/requests-management.component';
-import {UserManagementComponent} from './pages/user-management/user-management.component';
+import {RequestsManagementComponent} from './pages/requests-page/requests-management.component';
+import {UserManagementComponent} from './pages/users-page/user-management.component';
 
 export const AdminRoutes: Routes = [
     {

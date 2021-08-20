@@ -1,31 +1,34 @@
 <?php
 
-use App\Http\Controllers\MainAPIController;
-use App\Models\City;
-use App\Models\UserRequest as ModelsRequest;
-use App\Models\RequestFile;
-use App\Models\School;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CitiesController;
+use App\Http\Controllers\API\DashboardController;
+use App\Http\Controllers\API\RequestsController;
+use App\Http\Controllers\API\SchoolsController;
+use App\Http\Controllers\API\UsersController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Str;
-use Symfony\Component\HttpFoundation\Response;
 
 
+Route::post('/login', [AuthController::class, 'login']);
 
-Route::post('/login', [MainAPIController::class,'login']);
-
-Route::post('/register', [MainAPIController::class,'registration']);
+Route::post('/register', [AuthController::class, 'register']);
 
 Route::middleware('auth.token')->group(static function () {
-    Route::post('user',[MainAPIController::class,'user']);
-    Route::post('city', [MainAPIController::class,'city']);
-    Route::post('school', [MainAPIController::class,'school']);
-    Route::post('request', [MainAPIController::class,'request']);
-    Route::get('/users', [MainAPIController::class,'users']);
-    Route::get('/cities', [MainAPIController::class,'cities']);
-    Route::get('/schools',[MainAPIController::class,'schools']);
+    // users
+    Route::get('/users', [UsersController::class, 'index']);
+    Route::put('/users/{id}', [UsersController::class, 'update']);
+
+    // cities
+    Route::get('/cities', [CitiesController::class, 'index']);
+    Route::put('/cities/{id}', [CitiesController::class, 'update']);
+
+    // schools
+    Route::get('/schools', [SchoolsController::class, 'index']);
+    Route::put('/schools/{id}', [SchoolsController::class, 'update']);
+
+    // requests
+    Route::put('/requests/{id}', [RequestsController::class, 'update']);
+
 });
 
-Route::get('/dashboard', [MainAPIController::class,'dashboardData']);
+Route::get('/dashboard/home', [DashboardController::class, 'home']);

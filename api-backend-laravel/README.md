@@ -11,7 +11,7 @@
   * email
   * phone
   * password
-* City
+* CityModel
   * name
 * school
   * name

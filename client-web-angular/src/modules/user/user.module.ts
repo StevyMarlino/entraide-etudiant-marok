@@ -6,16 +6,16 @@ import {UserRoutes} from './user.routing';
 
 
 import {FormsModule} from '@angular/forms';
-import {ProfileParametersPageUserFormComponent} from './components/profile-parameters/profile-parameters-page-user-form/profile-parameters-page-user-form.component';
-import {ProfileParametersPageSchoolFormComponent} from './components/profile-parameters/profile-parameters-page-school-form/profile-parameters-page-school-form.component';
-import {ProfileParametersPageCityFormComponent} from './components/profile-parameters/profile-parameters-page-city-form/profile-parameters-page-city-form.component';
-import {ProfileParametersPageRequestFormComponent} from './components/profile-parameters/profile-parameters-page-request-form/profile-parameters-page-request-form.component';
-import {ProfileParametersPageComponent} from './pages/profile-parameters-page/profile-parameters-page.component';
-import {UserLayoutComponent} from './user-layout/user-layout.component';
-import {UserNavbarComponent} from './components/navbar/user-navbar.component';
-import {UserSidebarComponent} from './components/sidebar/user-sidebar.component';
-import {UserFooterComponent} from './components/footer/user-footer.component';
-import { ProfileParametersPageInfoCardComponent } from './components/profile-parameters/profile-parameters-page-info-card/profile-parameters-page-info-card.component';
+import {ProfileUserComponent} from './components/profile-user/profile-user.component';
+import {ProfileSchoolComponent} from './components/profile-school/profile-school.component';
+import {ProfileCityComponent} from './components/profile-city/profile-city.component';
+import {ProfileRequestComponent} from './components/profile-request/profile-request.component';
+import {ProfilePageComponent} from './pages/profile-page/profile-page.component';
+import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
+import {UserLayoutComponent} from './user-layout.component';
+import {AppNavbarComponent} from '../../app/components/navbar/app-navbar.component';
+import {AppSidebarComponent} from '../../app/components/sidebar/app-sidebar.component';
+import {AppFooterComponent} from '../../app/components/footer/app-footer.component';
 
 
 @NgModule({
@@ -26,15 +26,15 @@ import { ProfileParametersPageInfoCardComponent } from './components/profile-par
     ],
     declarations: [
         UserLayoutComponent,
-        UserNavbarComponent,
-        UserSidebarComponent,
-        UserFooterComponent,
-        ProfileParametersPageUserFormComponent,
-        ProfileParametersPageSchoolFormComponent,
-        ProfileParametersPageCityFormComponent,
-        ProfileParametersPageRequestFormComponent,
-        ProfileParametersPageComponent,
-        ProfileParametersPageInfoCardComponent
+        AppNavbarComponent,
+        AppSidebarComponent,
+        AppFooterComponent,
+        ProfileUserComponent,
+        ProfileSchoolComponent,
+        ProfileCityComponent,
+        ProfileRequestComponent,
+        ProfilePageComponent,
+        ProfileInfoComponent
     ]
 })
 

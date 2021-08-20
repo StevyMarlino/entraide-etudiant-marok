@@ -6,7 +6,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Session Driver
+    | Default SessionModel Driver
     |--------------------------------------------------------------------------
     |
     | This option controls the default session "driver" that will be used on
@@ -22,7 +22,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Lifetime
+    | SessionModel Lifetime
     |--------------------------------------------------------------------------
     |
     | Here you may specify the number of minutes that you wish the session
@@ -37,12 +37,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Encryption
+    | SessionModel Encryption
     |--------------------------------------------------------------------------
     |
     | This option allows you to easily specify that all of your session data
     | should be encrypted before it is stored. All encryption will be run
-    | automatically by Laravel and you can use the Session like normal.
+    | automatically by Laravel and you can use the SessionModel like normal.
     |
     */
 
@@ -50,7 +50,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session File Location
+    | SessionModel File Location
     |--------------------------------------------------------------------------
     |
     | When using the native session driver, we need a location where session
@@ -63,7 +63,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Database Connection
+    | SessionModel Database Connection
     |--------------------------------------------------------------------------
     |
     | When using the "database" or "redis" session drivers, you may specify a
@@ -76,7 +76,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Database Table
+    | SessionModel Database Table
     |--------------------------------------------------------------------------
     |
     | When using the "database" session driver, you may specify the table we
@@ -89,7 +89,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Cache Store
+    | SessionModel Cache Store
     |--------------------------------------------------------------------------
     |
     | While using one of the framework's cache driven session backends you may
@@ -104,7 +104,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Sweeping Lottery
+    | SessionModel Sweeping Lottery
     |--------------------------------------------------------------------------
     |
     | Some session drivers must manually sweep their storage location to get
@@ -117,7 +117,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Cookie Name
+    | SessionModel Cookie Name
     |--------------------------------------------------------------------------
     |
     | Here you may change the name of the cookie used to identify a session
@@ -133,7 +133,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Cookie Path
+    | SessionModel Cookie Path
     |--------------------------------------------------------------------------
     |
     | The session cookie path determines the path for which the cookie will
@@ -146,7 +146,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Cookie Domain
+    | SessionModel Cookie Domain
     |--------------------------------------------------------------------------
     |
     | Here you may change the domain of the cookie used to identify a session

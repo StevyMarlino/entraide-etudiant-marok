@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ChartType, LegendItem} from '../../../lbd/lbd-chart/lbd-chart.component';
 import * as Chartist from 'chartist';
-import {DashboardModel} from '../../../../app/models/dashboard.model';
-import {ApiRequestsService} from '../../../../app/services/api-requests/api-requests.service';
 
 
 @Component({
@@ -12,55 +10,45 @@ import {ApiRequestsService} from '../../../../app/services/api-requests/api-requ
 })
 export class GuestDashboardComponent implements OnInit {
 
-    public dashboardData: DashboardModel = new DashboardModel();
+    public emailChartType: ChartType;
+    public emailChartData: any;
+    public emailChartLegendItems: LegendItem[];
 
-    public formsData = {
-        difficulty_city: undefined,
+    public hoursChartType: ChartType;
+    public hoursChartData: any;
+    public hoursChartOptions: any;
+    public hoursChartResponsive: any[];
+    public hoursChartLegendItems: LegendItem[];
 
-    };
+    public activityChartType: ChartType;
+    public activityChartData: any;
+    public activityChartOptions: any;
+    public activityChartResponsive: any[];
+    public activityChartLegendItems: LegendItem[];
+    constructor() { }
 
-    public citiesChartType: ChartType;
-    public citiesChartData: any;
-    public citiesChartLegendItems: LegendItem[];
+    ngOnInit() {
+        this.emailChartType = ChartType.Pie;
+        this.emailChartData = {
+            labels: ['62%', '32%', '6%'],
+            series: [62, 32, 6]
+        };
+        this.emailChartLegendItems = [
+            { title: 'Open', imageClass: 'fa fa-circle text-info' },
+            { title: 'Bounce', imageClass: 'fa fa-circle text-danger' },
+            { title: 'Unsubscribe', imageClass: 'fa fa-circle text-warning' }
+        ];
 
-    public yearsChartType: ChartType;
-    public yearsChartData: any;
-    public yearsChartOptions: any;
-    public yearsChartResponsive: any[];
-    public yearsChartLegendItems: LegendItem[];
-
-    public notesChartType: ChartType;
-    public notesChartData: any;
-    public notesChartOptions: any;
-    public notesChartResponsive: any[];
-    public notesChartLegendItems: LegendItem[];
-
-
-    loaded = false;
-
-    constructor(
-        private webRequestService: ApiRequestsService
-    ) {
-    }
-
-    handleCitiesChart() {
-        // Cities
-        this.citiesChartType = ChartType.Pie;
-        this.citiesChartData = this.dashboardData.cities_chart;
-        // this.citiesChartLegendItems = [
-        //     {title: 'Etablissement 1', imageClass: 'fa fa-circle text-danger'},
-        //     {title: 'Etablissement 2', imageClass: 'fa fa-circle text-danger'},
-        //     {title: 'Etablissement 3', imageClass: 'fa fa-circle text-danger'}
-        // ];
-    }
-
-    handleYearsChart() {
-        this.yearsChartType = ChartType.Line;
-        this.yearsChartData = this.dashboardData.years_chart;
-        console.log(
-            this.yearsChartData
-        )
-        this.yearsChartOptions = {
+        this.hoursChartType = ChartType.Line;
+        this.hoursChartData = {
+            labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
+            series: [
+                [287, 385, 490, 492, 554, 586, 698, 695, 752, 788, 846, 944],
+                [67, 152, 143, 240, 287, 335, 435, 437, 539, 542, 544, 647],
+                [23, 113, 67, 108, 190, 239, 307, 308, 439, 410, 410, 509]
+            ]
+        };
+        this.hoursChartOptions = {
             low: 0,
             high: 800,
             showArea: true,
@@ -74,7 +62,7 @@ export class GuestDashboardComponent implements OnInit {
             showLine: false,
             showPoint: false,
         };
-        this.yearsChartResponsive = [
+        this.hoursChartResponsive = [
             ['screen and (max-width: 640px)', {
                 axisX: {
                     labelInterpolationFnc: function (value) {
@@ -83,26 +71,28 @@ export class GuestDashboardComponent implements OnInit {
                 }
             }]
         ];
-        this.yearsChartLegendItems = [];
-    }
+        this.hoursChartLegendItems = [
+            { title: 'Open', imageClass: 'fa fa-circle text-info' },
+            { title: 'Click', imageClass: 'fa fa-circle text-danger' },
+            { title: 'Click Second Time', imageClass: 'fa fa-circle text-warning' }
+        ];
 
-    handleNotesChart() {
-        this.notesChartType = ChartType.Bar;
-        this.notesChartData = {
+        this.activityChartType = ChartType.Bar;
+        this.activityChartData = {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             series: [
                 [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
                 [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
             ]
         };
-        this.notesChartOptions = {
+        this.activityChartOptions = {
             seriesBarDistance: 10,
             axisX: {
                 showGrid: false
             },
             height: '245px'
         };
-        this.notesChartResponsive = [
+        this.activityChartResponsive = [
             ['screen and (max-width: 640px)', {
                 seriesBarDistance: 5,
                 axisX: {
@@ -112,19 +102,11 @@ export class GuestDashboardComponent implements OnInit {
                 }
             }]
         ];
-        this.notesChartLegendItems = [
-            {title: 'Etablissement', imageClass: 'fa fa-circle text-info'},
-            {title: 'Notes', imageClass: 'fa fa-circle text-danger'}
+        this.activityChartLegendItems = [
+            { title: 'Tesla Model S', imageClass: 'fa fa-circle text-info' },
+            { title: 'BMW 5 Series', imageClass: 'fa fa-circle text-danger' }
         ];
-    }
 
-    async ngOnInit() {
-        this.dashboardData = await this.webRequestService
-            .getDashboardData()
-            .toPromise();
-        this.loaded = true;
-        this.handleCitiesChart();
-        this.handleYearsChart();
-        this.handleNotesChart();
+
     }
 }

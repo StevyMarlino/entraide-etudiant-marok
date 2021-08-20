@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {LoaderService} from '../../../../app/services/loader/loader.service';
-import {User} from 'app/models/user';
-import {ApiRequestsService} from '../../../../app/services/api-requests/api-requests.service';
-import {ApiErrorAlertService} from '../../../../app/services/api-error-alert/api-error-alert.service';
-import { AuthService } from 'app/services/auth/auth.service';
+import {LoaderService} from '../../../../app/services/loader.service';
+import {UserModel} from 'app/models/user.model';
+import {ApiRequestsService} from '../../../../app/services/api/api-requests.service';
+import {ApiErrorHandlerService} from '../../../../app/services/api-error-handler.service';
+import { UserBrowserSessionService } from 'app/services/user-browser-session.service';
+import {ApiAuthenticationService} from '../../../../app/services/api/api-authentication.service';
 
 @Component({
     selector: 'app-registration-form',
@@ -13,31 +14,24 @@ import { AuthService } from 'app/services/auth/auth.service';
 })
 export class RegistrationFormComponent implements OnInit {
 
-    user: User = new User();
+    user: UserModel = new UserModel();
 
     constructor(
         private router: Router,
-        public loader: LoaderService,
-        private request: ApiRequestsService,
-        private auth: AuthService,
-        private httpErrorsService: ApiErrorAlertService) {
+        private authentication: ApiAuthenticationService,
+        private userSession: UserBrowserSessionService,
+        private apiErrorHandler: ApiErrorHandlerService) {
     }
 
     ngOnInit(): void {
     }
 
     handleSubmit() {
-        this.loader.showLoader();
-        this.request.register(this.user)
+        this.authentication.register(this.user)
             .subscribe(successResponse => {
-                this.auth.setData(successResponse);
-                this.router.navigate(['/utilisateur/profil']).then(() => {
-                    this.loader.hideLoader()
-                })
-            }, errorResponse => {
-                this.loader.hideLoader();
-                this.httpErrorsService.toggleError(errorResponse.error);
-            })
+                this.userSession.user = successResponse;
+                this.router.navigate(['/utilisateur/profil'])
+            }, this.apiErrorHandler.handleFromResponse)
     }
 
 }

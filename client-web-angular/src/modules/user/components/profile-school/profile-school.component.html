@@ -1,0 +1,49 @@
+<form (ngSubmit)="handleSubmit()">
+    <div class="row">
+        <div class="col-md-12"><h4 style="margin: 0;">Etablissement</h4></div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="school_id">Etablissement</label>
+            <select name="school_id" id="school_id"   class="form-control" [(ngModel)]="formSchool.id" >
+                <option *ngFor="let school of schools" value="{{ school }}">
+                    {{ school.name }}
+                </option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="note">Note</label>
+            <select name="note" id="note" class="form-control" [(ngModel)]="formSchool.note" >
+                <option *ngFor="let i of [1,2,3,4,5]" value="{{i}}">
+                    {{ i }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="new_name">Nouvelle Etablissement (Si elle n'est pas renseignée) </label>
+            <input id="new_name"  type="text" name="new_name"   class="form-control" [(ngModel)]="formSchool.new_name" >
+        </div>
+        <div class="form-group col-md-6">
+            <label for="city_id">Ville</label>
+            <select  name="city_id" id="city_id"   class="form-control" [(ngModel)]="formSchool.city_id" >
+                <option *ngFor="let s of schools" value="{{ s.id }}">
+                    {{ s.name }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="city_about">A propos de l'etablissement</label>
+            <textarea  name="city_about" id="city_about"   class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12 text-center">
+            <button type="submit" class="btn btn-info btn-fill   ">Mettre a jour</button>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</form>

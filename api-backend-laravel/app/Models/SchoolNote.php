@@ -14,4 +14,9 @@ class SchoolNote extends Model
         'message',
         'school_id'
     ];
+
+    public function school()
+    {
+        return $this->belongsTo(School::class);
+    }
 }

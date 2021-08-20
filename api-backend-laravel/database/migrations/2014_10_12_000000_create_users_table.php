@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('family_name');
             $table->date('born_at');
-            $table->enum('gender',['masculin','feminan']);
+            $table->enum('gender',['masculin','feminin']);
             $table->enum('role',['admin','etudiant']);
             $table->string('phone');
             $table->foreignId('school_id')->nullable();

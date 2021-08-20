@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import {GuestLayoutComponent} from '../modules/guest/guest-layout.component';
+import {UserLayoutComponent} from '../modules/user/user-layout.component';
+import {AdminLayoutComponent} from '../modules/admin/admin-layout.component';
 
-import { UserLayoutComponent } from '../modules/user/user-layout/user-layout.component';
-import {GuestLayoutComponent} from '../modules/guest/guest-layout/guest-layout.component';
-import {AdminLayoutComponent} from '../modules/admin/admin-layout/admin-layout.component';
+
 
 const routes: Routes = [
   {

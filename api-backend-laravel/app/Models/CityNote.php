@@ -15,4 +15,9 @@ class CityNote extends Model
         'city_id'
     ];
 
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
 }

@@ -1,7 +1,7 @@
-import {User} from './user';
-import {City} from './city';
-import {Request} from './request';
-import {School} from './school';
+import {UserModel} from './user.model';
+import {CityModel} from './city.model';
+import {RequestModel} from './request.model';
+import {SchoolModel} from './school.model';
 
 declare interface GraphDataType {
     label: any,
@@ -10,10 +10,10 @@ declare interface GraphDataType {
 
 
 export class DashboardModel {
-    users?: User[] = [];
-    cities?: City[] = [];
-    requests?: Request[] = [];
-    schools?: School[] = [];
+    users?: UserModel[] = [];
+    cities?: CityModel[] = [];
+    requests?: RequestModel[] = [];
+    schools?: SchoolModel[] = [];
     difficulties?: any = [];
     cities_chart?: GraphDataType;
     years_chart?: GraphDataType;

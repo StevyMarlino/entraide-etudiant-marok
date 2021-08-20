@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
-import {LoaderService} from './services/loader/loader.service';
+import {LoaderService} from './services/loader.service';
 
 @Component({
   selector: 'app-root',
