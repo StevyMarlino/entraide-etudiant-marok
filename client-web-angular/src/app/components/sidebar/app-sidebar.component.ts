@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {RouteInfo} from '../../models/app.model';
+import {DataService} from "../../services/data.service";
 
-export const ROUTES: RouteInfo[] = [
-    { path: '/actualite', title: 'Actualité',  icon: 'pe-7s-news-paper', class: '' },
-    { path: '/tableau-de-bord', title: 'Tableau-de-board',  icon: 'fa fa-dashboard', class: '' },
-    { path: '/connexion', title: 'Compte',  icon: 'fa fa-user', class: '' },
-];
+
 
 @Component({
   selector: 'app-sidebar',
@@ -14,10 +11,10 @@ export const ROUTES: RouteInfo[] = [
 export class AppSidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuItems = this.dataService.ROUTES().filter(menuItem => menuItem);
   }
   isMobileMenu() {
       if ($(window).width() > 991) {

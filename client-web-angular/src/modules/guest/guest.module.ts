@@ -15,13 +15,18 @@ import {GuestLayoutComponent} from './guest-layout.component';
 import {AppNavbarComponent} from '../../app/components/navbar/app-navbar.component';
 import {AppSidebarComponent} from '../../app/components/sidebar/app-sidebar.component';
 import {AppFooterComponent} from '../../app/components/footer/app-footer.component';
+import {ChartsPieStudentsCitiesComponent} from './components/charts-pie-students-cities/charts-pie-students-cities.component';
+import {ChartsAreaStudentsYearsComponent} from './components/charts-area-students-years/charts-area-students-years.component';
+import {ChartsModule} from 'ng2-charts';
+import {ChartsBarStudentsSchoolsComponent} from "./components/charts-bar-students-schools/charts-bar-students-schools.component";
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule.forChild(GuestRoutes),
         FormsModule,
-        LbdModule
+        LbdModule,
+        ChartsModule
     ],
     declarations: [
         GuestLayoutComponent,
@@ -33,7 +38,11 @@ import {AppFooterComponent} from '../../app/components/footer/app-footer.compone
         RegistrationFormComponent,
         LoginFormComponent,
         GuestDashboardComponent,
-        ApiErrorAlertComponent
+        ApiErrorAlertComponent,
+        ChartsPieStudentsCitiesComponent,
+        ChartsAreaStudentsYearsComponent,
+        ChartsBarStudentsSchoolsComponent,
+        ChartsAreaStudentsYearsComponent
     ]
 })
 

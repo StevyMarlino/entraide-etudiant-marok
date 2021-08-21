@@ -27,6 +27,10 @@ export class UserBrowserSessionService {
         return  this._user
     }
 
+    check(): boolean {
+       return (this._user && this._user.id) ? true : false;
+    }
+
     logout() {
         localStorage.removeItem('AUTH_DATA.USER');
         this.router.navigate(['/connexion']);

@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './components/loader/loader.component';
 
-
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -20,7 +19,7 @@ import { LoaderComponent } from './components/loader/loader.component';
   ],
   declarations: [
     AppComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   bootstrap: [AppComponent]
 })
