@@ -1,5 +1,5 @@
-<div class="row">
-    <form (ngSubmit)="handleSubmit()">
+<form (ngSubmit)="handleSubmit()">
+    <div class="row">
         <div class="col-md-12 form-group ">
             <label for="files" >Selectionner un ou plusieurs fichiers</label>
             <input id="files" type="text" name="files"   class="form-control" [(ngModel)]="formData.id" >
@@ -9,6 +9,8 @@
                 * Nom du fichier X
             </p>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-12 form-group ">
             <label for="message">SERVICE D'ASSISTANCE</label>
             <textarea [(ngModel)]="formData.message"  id="message" name="message"   class="form-control" style="height: 220px"
@@ -19,9 +21,11 @@
                                                           Renseignement, Démarche au près de l'ambassade sur Rabat etc ...
                                 </textarea>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-12 form-group " >
-            <button type="submit" class="btn btn-info btn-fill   ">Mettre a jour</button>
+            <button type="submit" class="btn btn-secondary btn-fill   ">Mettre a jour</button>
             <div class="clearfix"></div>
         </div>
-    </form>
-</div>
+    </div>
+</form>

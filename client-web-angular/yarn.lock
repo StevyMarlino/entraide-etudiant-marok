@@ -1751,6 +1751,13 @@ angular-datatables@^12.0.0:
   dependencies:
     "@angular/cli" "^12.0.0"
 
+angular2-material-datepicker@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/angular2-material-datepicker/-/angular2-material-datepicker-0.5.0.tgz#094ef53341bab43c8a53b0116da301fa1f664413"
+  integrity sha1-CU71M0G6tDyKU7ARbaMB+h9mRBM=
+  dependencies:
+    rxjs latest
+
 animate.css@4.1.1:
   version "4.1.1"
   resolved "https://registry.npmjs.org/animate.css/-/animate.css-4.1.1.tgz"
@@ -8262,6 +8269,13 @@ rxjs@6.6.7, rxjs@^6.6.0:
 rxjs@^7.2.0:
   version "7.3.0"
   resolved "https://registry.npmjs.org/rxjs/-/rxjs-7.3.0.tgz"
+  integrity sha512-p2yuGIg9S1epc3vrjKf6iVb3RCaAYjYskkO+jHIaV0IjOPlJop4UnodOoFb2xeNwlguqLYvGw1b1McillYb5Gw==
+  dependencies:
+    tslib "~2.1.0"
+
+rxjs@latest:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-7.3.0.tgz#39fe4f3461dc1e50be1475b2b85a0a88c1e938c6"
   integrity sha512-p2yuGIg9S1epc3vrjKf6iVb3RCaAYjYskkO+jHIaV0IjOPlJop4UnodOoFb2xeNwlguqLYvGw1b1McillYb5Gw==
   dependencies:
     tslib "~2.1.0"

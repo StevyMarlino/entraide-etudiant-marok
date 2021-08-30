@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {UserModel} from '../../../../app/models/user.model';
 import {UserBrowserSessionService} from 'app/services/user-browser-session.service';
 import {ApiErrorHandlerService} from 'app/services/api-error-handler.service';
-import {ApiAuthenticationService} from '../../../../app/services/api/api-authentication.service';
+import {AuthApiService} from '../../../../app/services/api/auth-api.service';
 
 @Component({
     selector: 'app-login-form',
@@ -15,7 +15,7 @@ export class LoginFormComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private request: ApiAuthenticationService,
+        private request: AuthApiService,
         private userSession: UserBrowserSessionService,
         private apiErrorAlert: ApiErrorHandlerService
     ) {
@@ -26,7 +26,7 @@ export class LoginFormComponent implements OnInit {
 
     handleSubmit() {
         this.request.login(this.user).subscribe(user => {
-            this.userSession.user = user;
+            this.userSession.setUser(user);
             if (user.role === 'admin') {
                 this.router.navigate(['/admin/utilisateurs'])
             }
@@ -34,7 +34,6 @@ export class LoginFormComponent implements OnInit {
                 this.router.navigate(['/utilisateur/profil'])
             }
         }, error => {
-            console.log(error)
             this.apiErrorAlert.handleFromResponse(error)
         })
     }

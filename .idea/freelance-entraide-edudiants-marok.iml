@@ -119,6 +119,8 @@
       <excludeFolder url="file://$MODULE_DIR$/api-backend-laravel/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/api-backend-laravel/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/api-backend-laravel/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/client-web-angular/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/client-web-angular/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

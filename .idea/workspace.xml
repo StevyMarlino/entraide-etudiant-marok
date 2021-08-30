@@ -2,15 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0a5c4f5-ecfe-4fbc-8bb7-d49df52b3be9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/UserCitiesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/UserSchoolsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/Cities/CitiesStoreRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/Cities/CitiesUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/Schools/SchoolsStoreRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/Schools/SchoolsUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/UserCities/UserCitiesStoreRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/UserCities/UserCitiesUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/UserRequests/UserRequestsStoreRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/UserRequests/UserRequestsUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/UserSchools/UserSchoolUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/UserSchools/UserSchoolsStoreRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/Users/UsersStoreRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Requests/API/Users/UsersUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/database/seeders/CitiesTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/database/seeders/SchoolsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/database/seeders/UsersRelationsSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-backend-laravel/database/seeders/UsersTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api/cities-api.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/notification.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/app-common.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/navbar/app-navbar.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/sidebar/app-sidebar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/freelance-entraide-edudiants-marok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/freelance-entraide-edudiants-marok.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/CitiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/CitiesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/RequestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/UserRequestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/SchoolsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/SchoolsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Controllers/API/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Http/Middleware/SpaAuthemtication.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Http/Middleware/SpaAuthentication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Models/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Models/City.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Models/CityNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Models/UserCity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Models/RequestFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Models/UserRequestFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Models/School.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Models/School.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Models/SchoolNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Models/UserSchool.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Models/UserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Models/UserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/database/migrations/2021_08_08_203345_create_mains_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/database/migrations/2021_08_08_203345_create_mains_tables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/public/note.png" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/public/request.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-backend-laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api-backend-laravel/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-web-angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/navbar/app-navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/components/navbar/app-navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/sidebar/app-sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/components/sidebar/app-sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/app.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/app.routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/api-error-alert/api-error-alert.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api/users-cities-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/api-error-alert/api-error-alert.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/api-error-alert/api-error-alert.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/api-error-alert/api-error-alert.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/api-error-alert/api-error-alert.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/footer/app-footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api/users-schools-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/footer/app-footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/footer/app-footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/footer/app-footer.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/footer/app-footer.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/footer/app-footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/footer/app-footer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/loader/loader.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/loader/loader.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/loader/loader.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/loader/loader.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/loader/loader.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/loader/loader.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/loader/loader.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/loader/loader.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/navbar/app-navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/api-error-alert/api-error-alert.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/navbar/app-navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/navbar/app-navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/navbar/app-navbar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/navbar/app-navbar.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/navbar/app-navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/navbar/app-navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/sidebar/app-sidebar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/footer/app-footer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/sidebar/app-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/sidebar/app-sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/sidebar/app-sidebar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/sidebar/app-sidebar.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/components/sidebar/app-sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/app-common/components/sidebar/app-sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/models/app.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/app.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/models/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/models/user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/api-error-handler.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api-error-handler.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/api/api-authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api/auth-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/api/api-requests.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api/api-requests.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/api/cities-api-resource.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/api/requests-api-resource.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api/requests-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/api/schools-api-resource.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api/schools-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/api/users-api-resource.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/api/users-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/data.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-web-angular/src/app/services/user-browser-session.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/app/services/user-browser-session.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/requests-page/requests-management.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/requests-page/requests-management.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/users-page/user-management.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/admin/pages/users-page/user-management.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/charts-bar-students-schools/charts-bar-students-schools.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/charts-bar-students-schools/charts-bar-students-schools.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/login-form/login-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/login-form/login-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/registration-form/registration-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/components/registration-form/registration-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guards/guest.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guards/guest.guard.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guest.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/guest.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/pages/dashboard-page/guest-dashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/pages/dashboard-page/guest-dashboard.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/guest/pages/dashboard-page/guest-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/guest/pages/dashboard-page/guest-dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-city/profile-city.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-city/profile-city.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-city/profile-city.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-city/profile-city.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-info/profile-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-info/profile-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-info/profile-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-info/profile-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-request/profile-request.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-request/profile-request.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-school/profile-school.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-school/profile-school.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-user/profile-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-user/profile-user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-user/profile-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/components/profile-user/profile-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/guards/user.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/guards/user.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-web-angular/src/modules/user/user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/modules/user/user.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-web-angular/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-web-angular/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client-web-angular/yarn.lock" afterDir="false" />
     </list>
@@ -25,6 +117,13 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,7 +245,11 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1wPOUoVifJSjn46EWGvmC6IX67Y" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/api-backend-laravel/.env" />
@@ -163,11 +266,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\modules\guest\components" />
-      <recent name="D:\LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\app\services\api" />
+      <recent name="D:\LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\modules\app-common\components" />
       <recent name="D:\LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\app\services" />
-      <recent name="D:\LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\modules\user\components" />
-      <recent name="D:\MON-LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\client-web-angular\src\modules\user\components\profile-parameters" />
+      <recent name="D:\LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\api-backend-laravel\app\Http\Controllers\API" />
+      <recent name="D:\LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\api-backend-laravel\app\Http\Requests\API\UserRequests" />
+      <recent name="D:\LAB\PROJETS\JAVASCRIPT\freelance-entraide-edudiants-marok\api-backend-laravel\app\Http\Requests\API\UserCities" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -181,6 +284,29 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/client-web-angular/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/client-web-angular/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -210,12 +336,43 @@
       <workItem from="1629488180256" duration="822000" />
       <workItem from="1629491495889" duration="3499000" />
       <workItem from="1629498155528" duration="1683000" />
-      <workItem from="1629531169587" duration="2374000" />
+      <workItem from="1629531169587" duration="7205000" />
+      <workItem from="1629540552941" duration="1826000" />
+      <workItem from="1629549714062" duration="1370000" />
+      <workItem from="1629551914182" duration="6479000" />
+      <workItem from="1629577270445" duration="3910000" />
+      <workItem from="1629583345356" duration="10455000" />
+      <workItem from="1629620766045" duration="5330000" />
+      <workItem from="1629671214290" duration="411000" />
+      <workItem from="1629726787755" duration="13965000" />
+      <workItem from="1629753910670" duration="3581000" />
+      <workItem from="1629829333397" duration="1187000" />
+      <workItem from="1629837069303" duration="7046000" />
+      <workItem from="1629928580914" duration="2652000" />
+      <workItem from="1630011422056" duration="3292000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/index.js.map" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/index.js" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/src/datepicker.component.js" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/src/datepicker.component.js.map" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/src/datepicker.module.js" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/src/calendar.js.map" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/src/calendar.js" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/src/datepicker.module.js.map" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/integration-test/main.js.map" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/integration-test/app.module.js.map" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/integration-test/app.component.js.map" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/integration-test/main.js" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/integration-test/app.component.js" />
+        <option value="$PROJECT_DIR$/client-web-angular/node_modules/angular2-material-datepicker/integration-test/app.module.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -229,5 +386,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

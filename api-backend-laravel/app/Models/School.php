@@ -15,7 +15,7 @@ class School extends Model
 
     public function notes()
     {
-        return $this->hasMany(SchoolNote::class);
+        return $this->hasMany(UserSchool::class);
     }
 
     public function students()

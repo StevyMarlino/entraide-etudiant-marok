@@ -25,30 +25,31 @@ class CreateMainsTables extends Migration
             $table->string('color')->default("#d04245");
             $table->timestamps();
         });
-        Schema::create('requests', function (Blueprint $table) {
+        Schema::create('user_requests', function (Blueprint $table) {
             $table->id();
             $table->text('content');
             $table->foreignId('user_id');
             $table->timestamps();
         });
-        Schema::create('request_files', function (Blueprint $table) {
+        Schema::create('user_request_files', function (Blueprint $table) {
             $table->id();
             $table->string('path');
+            $table->string('url');
             $table->foreignId('request_id');
             $table->timestamps();
         });
-        Schema::create('city_notes', function (Blueprint $table) {
+        Schema::create('user_cities', function (Blueprint $table) {
             $table->id();
-            $table->string('value');
-            $table->text('message')->nullable();
+            $table->integer('note');
+            $table->text('message');
             $table->foreignId('city_id');
             $table->foreignId('user_id');
             $table->timestamps();
         });
-        Schema::create('school_notes', function (Blueprint $table) {
+        Schema::create('user_schools', function (Blueprint $table) {
             $table->id();
-            $table->string('value');
-            $table->text('message')->nullable();
+            $table->integer('note');
+            $table->text('message');
             $table->foreignId('school_id');
             $table->foreignId('user_id');
             $table->timestamps();

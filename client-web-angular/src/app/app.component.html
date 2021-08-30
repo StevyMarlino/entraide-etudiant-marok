@@ -1,2 +1,8 @@
 <app-loader *ngIf="Loader.isLoading"></app-loader>
+<div *ngIf="notificationMessages.length > 0" class="notification-messages-container">
+    <div class="alert alert-info animate__fadeIn"
+         *ngFor="let msg of notificationMessages">
+        {{ msg }}
+    </div>
+</div>
 <router-outlet *ngIf="!Loader.isLoading"></router-outlet>

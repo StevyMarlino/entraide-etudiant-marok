@@ -8,9 +8,10 @@ import {DataTablesModule} from 'angular-datatables';
 import {RequestsManagementComponent} from './pages/requests-page/requests-management.component';
 import {UserManagementComponent} from './pages/users-page/user-management.component';
 import {AdminLayoutComponent} from './admin-layout.component';
-import {AppNavbarComponent} from '../../app/components/navbar/app-navbar.component';
-import {AppFooterComponent} from '../../app/components/footer/app-footer.component';
-import {AppSidebarComponent} from '../../app/components/sidebar/app-sidebar.component';
+import {AppNavbarComponent} from '../app-common/components/navbar/app-navbar.component';
+import {AppFooterComponent} from '../app-common/components/footer/app-footer.component';
+import {AppSidebarComponent} from '../app-common/components/sidebar/app-sidebar.component';
+import {AppCommonModule} from '../app-common/app-common.module';
 
 
 
@@ -19,15 +20,13 @@ import {AppSidebarComponent} from '../../app/components/sidebar/app-sidebar.comp
         CommonModule,
         RouterModule.forChild(AdminRoutes),
         LbdModule,
-        DataTablesModule
+        DataTablesModule,
+        AppCommonModule
     ],
   declarations: [
     AdminLayoutComponent,
     RequestsManagementComponent,
     UserManagementComponent,
-    AppNavbarComponent,
-    AppSidebarComponent,
-    AppFooterComponent
   ],
 })
 export class AdminModule { }

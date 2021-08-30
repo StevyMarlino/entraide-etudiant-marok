@@ -3,7 +3,7 @@ import {RequestModel} from '../../../../app/models/request.model';
 import {ApiRequestsService} from '../../../../app/services/api/api-requests.service';
 import {UserBrowserSessionService} from '../../../../app/services/user-browser-session.service';
 import {LoaderService} from '../../../../app/services/loader.service';
-import {RequestsApiResourceService} from '../../../../app/services/api/requests-api-resource.service';
+import {RequestsApiService} from '../../../../app/services/api/requests-api.service';
 
 declare interface TableData {
     headerRow: string[];
@@ -25,12 +25,12 @@ export class RequestsManagementComponent implements OnInit {
     constructor(
         private httpService: ApiRequestsService,
         private userSession: UserBrowserSessionService,
-        private requestApi: RequestsApiResourceService
+        private requestApi: RequestsApiService
     ) {
     }
 
     ngOnInit() {
-        this.requestApi.getAll().subscribe(requests => {
+        this.requestApi.getAll().subscribe((requests: any) => {
             this.requests = requests
         });
     }

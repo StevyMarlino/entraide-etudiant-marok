@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiErrorResponseModel} from '../../models/api-error-response.model';
-import {ApiErrorHandlerService} from '../../services/api-error-handler.service';
+import {ApiErrorResponseModel} from '../../../../app/models/api-error-response.model';
+import {ApiErrorHandlerService} from '../../../../app/services/api-error-handler.service';
 
 @Component({
     selector: 'app-http-errors',
@@ -21,7 +21,7 @@ export class ApiErrorAlertComponent implements OnInit {
 
     ngOnInit(): void {
         this.httpErrorsService
-            .onToggleError()
+            .toggleErrorObserver()
             .subscribe(errorResponse => {
                 this.errors = [];
                 for (const key in errorResponse.errors) {

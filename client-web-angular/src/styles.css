@@ -1,3 +1,7 @@
+body {
+    background-color: #eee;
+}
+
 .img-fluid{
     display: inline-block;
     max-width: 100%;
@@ -11,4 +15,13 @@
 .box-fixed-height {
     min-height: 400px;
     overflow: auto;
+}
+
+.notification-messages-container{
+    right: 20px;
+    top: 70px;
+    position: fixed;
+    z-index: 99999;
+    max-width: 500px ;
+    height: 100%;
 }

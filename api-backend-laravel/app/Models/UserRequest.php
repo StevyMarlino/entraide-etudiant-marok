@@ -9,7 +9,6 @@ class UserRequest extends Model
 {
     use HasFactory;
 
-    protected $table = 'requests';
 
     protected $fillable = [
         'content'
@@ -17,7 +16,7 @@ class UserRequest extends Model
 
     public function files()
     {
-        return $this->hasMany(RequestFile::class,'request_id');
+        return $this->hasMany(UserRequestFile::class,'request_id');
     }
 
 }

@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SchoolNote extends Model
+class UserRequestFile extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'value',
-        'message',
-        'school_id'
+        'path',
+        'url',
+        'request_id'
     ];
 
-    public function school()
-    {
-        return $this->belongsTo(School::class);
-    }
 }

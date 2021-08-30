@@ -5,7 +5,7 @@ import {UserModel} from 'app/models/user.model';
 import {ApiRequestsService} from '../../../../app/services/api/api-requests.service';
 import {ApiErrorHandlerService} from '../../../../app/services/api-error-handler.service';
 import { UserBrowserSessionService } from 'app/services/user-browser-session.service';
-import {ApiAuthenticationService} from '../../../../app/services/api/api-authentication.service';
+import {AuthApiService} from '../../../../app/services/api/auth-api.service';
 
 @Component({
     selector: 'app-registration-form',
@@ -18,7 +18,7 @@ export class RegistrationFormComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private authentication: ApiAuthenticationService,
+        private authentication: AuthApiService,
         private userSession: UserBrowserSessionService,
         private apiErrorHandler: ApiErrorHandlerService) {
     }
@@ -28,8 +28,8 @@ export class RegistrationFormComponent implements OnInit {
 
     handleSubmit() {
         this.authentication.register(this.user)
-            .subscribe(successResponse => {
-                this.userSession.user = successResponse;
+            .subscribe(user => {
+                this.userSession.setUser(user);
                 this.router.navigate(['/utilisateur/profil'])
             }, this.apiErrorHandler.handleFromResponse)
     }

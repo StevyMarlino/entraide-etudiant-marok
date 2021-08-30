@@ -14,11 +14,14 @@ export class ApiErrorHandlerService {
         errors: []
     };
 
-    onToggleError(): Observable<any> {
+    constructor() {
+    }
+
+    toggleErrorObserver(): Observable<any> {
         return this.subject.asObservable();
     }
 
-    toggleError(value: ApiErrorResponseModel): void {
+    displayError(value: ApiErrorResponseModel): void {
         this.subject.next({
             message: undefined,
             errors: []
@@ -30,21 +33,13 @@ export class ApiErrorHandlerService {
     handleFromResponse(errorResponse) {
         if (errorResponse.error) {
             if (errorResponse.error.email) {
-                this.toggleError({
+                this.displayError({
                     message: errorResponse.error.email,
                     errors: []
                 })
             } else if (errorResponse.error.message && errorResponse.error.errors) {
-                this.toggleError(errorResponse.error);
+                this.displayError(errorResponse.error);
             }
         }
-    }
-
-    hiddenHandle(errorResponse) {
-        console.log(errorResponse)
-    }
-
-
-    constructor() {
     }
 }

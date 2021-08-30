@@ -1,6 +1,8 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
-import {DataService} from "../../services/data.service";
+import {DataService} from '../../../../app/services/data.service';
+import {Router} from '@angular/router';
+import {UserBrowserSessionService} from '../../../../app/services/user-browser-session.service';
 
 
 @Component({
@@ -15,7 +17,13 @@ export class AppNavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(location: Location, private element: ElementRef, private dataService: DataService) {
+    constructor(
+        location: Location,
+        private element: ElementRef,
+        private dataService: DataService,
+        public router: Router,
+        public userSession: UserBrowserSessionService
+    ) {
         this.location = location;
         this.sidebarVisible = false;
     }
@@ -55,17 +63,22 @@ export class AppNavbarComponent implements OnInit {
     };
 
     getTitle() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
+        let titlee = this.location.prepareExternalUrl(this.location.path());
         if (titlee.charAt(0) === '#') {
             titlee = titlee.slice(1);
         }
 
-        for (var item = 0; item < this.listTitles.length; item++) {
+        for (let item = 0; item < this.listTitles.length; item++) {
             if (this.listTitles[item].path === titlee) {
                 return this.listTitles[item].title;
             }
         }
         return 'Dashboard';
+    }
+
+    logout() {
+        this.userSession.logout();
+        this.router.navigate(['/connexion'])
     }
 
 }

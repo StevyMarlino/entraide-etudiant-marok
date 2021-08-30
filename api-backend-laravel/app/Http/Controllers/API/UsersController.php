@@ -5,46 +5,66 @@ namespace App\Http\Controllers\API;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\Users\UsersStoreRequest;
+use App\Http\Requests\API\Users\UsersUpdateRequest;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UsersController extends Controller
 {
 
-    /**
-     * Get users
-     * @param Request $request
-     * @return Builder[]|Collection
-     */
     public function index(Request $request)
     {
-        return User::query()->get();
+        return User::query()
+            ->where($request->only([
+                'name',
+                'email'
+            ]))
+            ->get();
     }
 
-    /**
-     * Update UserModel Information's
-     * @param Request $request
-     * @param string $id
-     * @return JsonResponse
-     */
-    public function update(Request $request, $id)
+    public function show(User $user)
     {
-        $request->validate([
-            'name' => 'unique:users',
-            'email' => 'unique:users'
-        ]);
+        return $user;
+    }
+
+    public function store(UsersStoreRequest $request)
+    {
+        $data = $request->all();
+        $data['access_token'] = md5(Str::random(130));
+        $data['password'] = bcrypt($data['password']);
+        $user = User::query()->create($data);
+        return response()->json($user);
+    }
+
+
+    public function update(UsersUpdateRequest $request, User $user)
+    {
+        $data = $request->all();
         if (!empty($request->password)) {
-            $request->merge([
-                'password' => bcrypt($request->password)
-            ]);
+            $data['password'] = bcrypt($request->password);
         }
-        $user = $request->user->update($request->all());
-        return response()->json([
-            'user' => $user
-        ]);
+        if ($request->hasFile('avatar')) {
+            $file = $request
+                ->file('avatar')
+                ->store("avatar",'public');
+            $data['avatar'] = $file;
+        }
+        if ($request->hasFile('cover')) {
+            $file = $request
+                ->file('cover')
+                ->store("cover",'public');
+            $data['cover'] = $file;
+        }
+        $user->update($data);
+        return $user;
+    }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return [];
     }
 
 

@@ -21,17 +21,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-12">
             <label for="new_name">Nouvelle Etablissement (Si elle n'est pas renseignée) </label>
             <input id="new_name"  type="text" name="new_name"   class="form-control" [(ngModel)]="formSchool.new_name" >
-        </div>
-        <div class="form-group col-md-6">
-            <label for="city_id">Ville</label>
-            <select  name="city_id" id="city_id"   class="form-control" [(ngModel)]="formSchool.city_id" >
-                <option *ngFor="let s of schools" value="{{ s.id }}">
-                    {{ s.name }}
-                </option>
-            </select>
         </div>
     </div>
     <div class="row">
@@ -41,8 +33,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-md-12 text-center">
-            <button type="submit" class="btn btn-info btn-fill   ">Mettre a jour</button>
+        <div class="form-group col-md-12 text-left">
+            <button type="submit" class="btn btn-secondary btn-fill   ">Mettre a jour</button>
             <div class="clearfix"></div>
         </div>
     </div>

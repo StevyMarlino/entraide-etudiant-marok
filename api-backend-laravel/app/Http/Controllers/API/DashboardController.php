@@ -6,7 +6,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\City;
 use App\Models\School;
-use App\Models\SchoolNote;
+use App\Models\UserSchool;
 use App\Models\User;
 use App\Models\UserRequest;
 use Illuminate\Http\Request;
@@ -14,11 +14,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
 
-    /**
-     * Get Dashboard home data
-     * @param Request $request
-     * @return array
-     */
+
     public function home(Request $request)
     {
         // Database data
@@ -60,7 +56,7 @@ class DashboardController extends Controller
             $notes_chart['label'][] = $i;
             for ($j = 0; $j <= 3; $j++) {
                 $date = $year + $j;
-                $notes_chart['series'][$j] = SchoolNote::query()
+                $notes_chart['series'][$j] = UserSchool::query()
                     ->whereYear('created_at', $date)
                     ->count();
             }

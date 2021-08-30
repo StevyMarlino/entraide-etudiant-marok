@@ -6,8 +6,6 @@ import {GuestLayoutComponent} from '../modules/guest/guest-layout.component';
 import {UserLayoutComponent} from '../modules/user/user-layout.component';
 import {AdminLayoutComponent} from '../modules/admin/admin-layout.component';
 
-
-
 const routes: Routes = [
   {
     path: '',

@@ -13,28 +13,24 @@ import {ProfileRequestComponent} from './components/profile-request/profile-requ
 import {ProfilePageComponent} from './pages/profile-page/profile-page.component';
 import { ProfileInfoComponent } from './components/profile-info/profile-info.component';
 import {UserLayoutComponent} from './user-layout.component';
-import {AppNavbarComponent} from '../../app/components/navbar/app-navbar.component';
-import {AppSidebarComponent} from '../../app/components/sidebar/app-sidebar.component';
-import {AppFooterComponent} from '../../app/components/footer/app-footer.component';
+import {AppCommonModule} from '../app-common/app-common.module';
 
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule.forChild(UserRoutes),
-        FormsModule
+        FormsModule,
+        AppCommonModule
     ],
     declarations: [
         UserLayoutComponent,
-        AppNavbarComponent,
-        AppSidebarComponent,
-        AppFooterComponent,
         ProfileUserComponent,
         ProfileSchoolComponent,
         ProfileCityComponent,
         ProfileRequestComponent,
         ProfilePageComponent,
-        ProfileInfoComponent
+        ProfileInfoComponent,
     ]
 })
 

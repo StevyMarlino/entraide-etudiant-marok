@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiRequestsService} from '../../../../app/services/api/api-requests.service';
 import {UserBrowserSessionService} from '../../../../app/services/user-browser-session.service';
 import {UserModel} from '../../../../app/models/user.model';
-import {UsersApiResourceService} from "../../../../app/services/api/users-api-resource.service";
+import {UsersApiService} from '../../../../app/services/api/users-api.service';
 
 declare interface TableData {
     headerRow: string[];
@@ -24,13 +24,12 @@ export class UserManagementComponent implements OnInit {
     constructor(
         private httpService: ApiRequestsService,
         private userSession: UserBrowserSessionService,
-        private usersApi: UsersApiResourceService
+        private usersApi: UsersApiService
     ) {
     }
 
     ngOnInit() {
-        const user = this.userSession.user;
-        this.usersApi.getAll().subscribe(users => {
+        this.usersApi.getAll().subscribe((users: any) => {
             this.users = users;
         })
     }

@@ -10,15 +10,16 @@ import {RegistrationFormComponent} from './components/registration-form/registra
 import {LoginFormComponent} from './components/login-form/login-form.component';
 import {GuestDashboardComponent} from './pages/dashboard-page/guest-dashboard.component';
 import {LbdModule} from '../lbd/lbd.module';
-import {ApiErrorAlertComponent} from '../../app/components/api-error-alert/api-error-alert.component';
+import {ApiErrorAlertComponent} from '../app-common/components/api-error-alert/api-error-alert.component';
 import {GuestLayoutComponent} from './guest-layout.component';
-import {AppNavbarComponent} from '../../app/components/navbar/app-navbar.component';
-import {AppSidebarComponent} from '../../app/components/sidebar/app-sidebar.component';
-import {AppFooterComponent} from '../../app/components/footer/app-footer.component';
+import {AppNavbarComponent} from '../app-common/components/navbar/app-navbar.component';
+import {AppSidebarComponent} from '../app-common/components/sidebar/app-sidebar.component';
+import {AppFooterComponent} from '../app-common/components/footer/app-footer.component';
 import {ChartsPieStudentsCitiesComponent} from './components/charts-pie-students-cities/charts-pie-students-cities.component';
 import {ChartsAreaStudentsYearsComponent} from './components/charts-area-students-years/charts-area-students-years.component';
 import {ChartsModule} from 'ng2-charts';
-import {ChartsBarStudentsSchoolsComponent} from "./components/charts-bar-students-schools/charts-bar-students-schools.component";
+import {ChartsBarStudentsSchoolsComponent} from './components/charts-bar-students-schools/charts-bar-students-schools.component';
+import {AppCommonModule} from '../app-common/app-common.module';
 
 @NgModule({
     imports: [
@@ -26,23 +27,21 @@ import {ChartsBarStudentsSchoolsComponent} from "./components/charts-bar-student
         RouterModule.forChild(GuestRoutes),
         FormsModule,
         LbdModule,
-        ChartsModule
+        ChartsModule,
+        AppCommonModule,
+
     ],
     declarations: [
         GuestLayoutComponent,
-        AppNavbarComponent,
-        AppSidebarComponent,
-        AppFooterComponent,
         NewsPageComponent,
         AuthenticationPageComponent,
         RegistrationFormComponent,
         LoginFormComponent,
         GuestDashboardComponent,
-        ApiErrorAlertComponent,
         ChartsPieStudentsCitiesComponent,
         ChartsAreaStudentsYearsComponent,
         ChartsBarStudentsSchoolsComponent,
-        ChartsAreaStudentsYearsComponent
+        ChartsAreaStudentsYearsComponent,
     ]
 })
 

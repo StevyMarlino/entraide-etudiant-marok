@@ -2,33 +2,36 @@ import {Injectable} from '@angular/core';
 import {ApiRequestsService} from './api/api-requests.service';
 import {Router} from '@angular/router';
 import {UserModel} from 'app/models/user.model';
+import {Observable, Subject} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserBrowserSessionService {
 
-    _user: UserModel;
-
-    demo: UserModel;
+    userSubject: Subject<UserModel> = new Subject<UserModel>();
 
     constructor(
         private webService: ApiRequestsService,
-        private router: Router) {
+        private router: Router
+    ) {
     }
 
-    set user(user: UserModel) {
-        this._user = user;
-        localStorage.setItem('AUTH_DATA.USER', JSON.stringify(this._user));
+    setUser(user: UserModel) {
+        localStorage.setItem('AUTH_DATA.USER', JSON.stringify(user));
+        this.userSubject.next(user);
     }
 
-    get user(): UserModel {
-        this._user = JSON.parse(localStorage.getItem('AUTH_DATA.USER'));
-        return  this._user
+    getUser(): UserModel {
+        return JSON.parse(localStorage.getItem('AUTH_DATA.USER'));
+    }
+
+    getUserObserver(): Observable<UserModel> {
+        return this.userSubject.asObservable();
     }
 
     check(): boolean {
-       return (this._user && this._user.id) ? true : false;
+        return JSON.parse(localStorage.getItem('AUTH_DATA.USER')) !== null;
     }
 
     logout() {

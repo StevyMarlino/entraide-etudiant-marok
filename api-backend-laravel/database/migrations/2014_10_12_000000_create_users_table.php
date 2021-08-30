@@ -22,6 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('access_token')->nullable();
             $table->string('last_name');
             $table->string('family_name');
+            $table->string('facebook_url')->nullable();
+            $table->string('tweeter_url')->nullable();
+            $table->string('cover')->nullable();
+            $table->string('avatar')->nullable();
             $table->date('born_at');
             $table->enum('gender',['masculin','feminin']);
             $table->enum('role',['admin','etudiant']);

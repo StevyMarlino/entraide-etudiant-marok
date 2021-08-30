@@ -18,15 +18,22 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'email_verified_at',
         'password',
+        'access_token',
         'last_name',
         'family_name',
+        'facebook_url',
+        'tweeter_url',
+        'cover',
+        'avatar',
         'born_at',
         'gender',
+        'role',
         'phone',
         'school_id',
         'city_id',
-        'school_registration_date',
+        'school_registration_date'
     ];
 
     /**
@@ -48,14 +55,35 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function city_note()
+    protected $appends = [
+        'avatar_url',
+        'cover_url'
+    ];
+
+    public function getAvatarUrlAttribute()
     {
-        return $this->hasOne(CityNote::class);
+        return url($this->attributes['avatar']);
     }
 
-    public function school_note()
+    public function getCoverUrlAttribute()
     {
-        return $this->hasOne(SchoolNote::class);
+        return url($this->attributes['avatar']);
     }
+
+    public function city()
+    {
+        return $this->hasOne(UserCity::class);
+    }
+
+    public function school()
+    {
+        return $this->hasOne(UserSchool::class);
+    }
+
+    public function requests()
+    {
+        return $this->hasMany(UserRequest::class);
+    }
+
 
 }

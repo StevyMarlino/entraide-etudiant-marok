@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {RouteInfo} from '../../models/app.model';
-import {DataService} from "../../services/data.service";
+import {RouteInfo} from '../../../../app/models/app.model';
+import {DataService} from '../../../../app/services/data.service';
 
 
 

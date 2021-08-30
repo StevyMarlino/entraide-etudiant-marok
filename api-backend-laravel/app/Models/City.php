@@ -19,7 +19,7 @@ class City extends Model
 
     public function notes()
     {
-        return $this->hasMany(CityNote::class);
+        return $this->hasMany(UserCity::class);
     }
 
     public function students()

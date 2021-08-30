@@ -3,8 +3,10 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\CitiesController;
 use App\Http\Controllers\API\DashboardController;
-use App\Http\Controllers\API\RequestsController;
 use App\Http\Controllers\API\SchoolsController;
+use App\Http\Controllers\API\UserCitiesController;
+use App\Http\Controllers\API\UserRequestsController;
+use App\Http\Controllers\API\UserSchoolsController;
 use App\Http\Controllers\API\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,20 +16,25 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::middleware('auth.token')->group(static function () {
-    // users
-    Route::get('/users', [UsersController::class, 'index']);
-    Route::put('/users/{id}', [UsersController::class, 'update']);
 
-    // cities
-    Route::get('/cities', [CitiesController::class, 'index']);
-    Route::put('/cities/{id}', [CitiesController::class, 'update']);
+    Route::resource('/users/cities', UserCitiesController::class)
+        ->except('create', 'edit');
 
-    // schools
-    Route::get('/schools', [SchoolsController::class, 'index']);
-    Route::put('/schools/{id}', [SchoolsController::class, 'update']);
+    Route::put('/users/cities',[UserCitiesController::class,'updateUserCity']);
 
-    // requests
-    Route::put('/requests/{id}', [RequestsController::class, 'update']);
+    Route::resource('/users/schools', UserSchoolsController::class)
+        ->except('create', 'edit');
+
+    Route::put('/users/schools',[UserSchoolsController::class,'updateUserSchool']);
+
+    Route::resource('/users', UsersController::class)->except('create', 'edit');
+
+    Route::resource('/cities', CitiesController::class)->except('create', 'edit');
+
+    Route::resource('/schools', SchoolsController::class)->except('create', 'edit');
+
+    Route::resource('/requests', UserRequestsController::class)
+        ->except('create', 'edit','update','delete');
 
 });
 
